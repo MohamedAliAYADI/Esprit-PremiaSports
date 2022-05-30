@@ -4,7 +4,7 @@ import edu.esprit.utils.MyConnection;
 
 
 
-public class MainClass {
+public class MainClassEvent {
     public static void main(String[] args) {
 
     	MyConnection connectDB = MyConnection.getInstance();
