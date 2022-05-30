@@ -11,8 +11,7 @@ import edu.esprit.utils.MyConnection;
 public class MainClassEvent {
     public static void main(String[] args) {
 
-    	System.out.print(true);
-    	System.out.println(true);
+       System.out.println("EventClassMain");
     	// create instance
        MyConnection mc= MyConnection.getInstance();
        // testing some entity
