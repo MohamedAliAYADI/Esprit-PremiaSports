@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package edu.esprit.utils;
 
 import java.sql.Connection;
@@ -8,11 +13,11 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Geekez
+ * @author Geekz
  */
 public class MyConnection {
 
-    public String url="jdbc:mysql://localhost:3306/test";
+    public String url="jdbc:mysql://localhost:3306/eventdb";
     public String login="root";
     public String pwd="";
     public static Connection cnx;
