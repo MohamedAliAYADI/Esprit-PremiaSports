@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class MyConnection {
 
-    public String url="jdbc:mysql://localhost:3306/eventdb";
+    public String url="jdbc:mysql://localhost:3306/premia_sports";
     public String login="root";
     public String pwd="";
     public static Connection cnx;
