@@ -7,7 +7,7 @@ package edu.esprit.services;
 
 /**
  *
- * @author nemya
+ * @author Geekz
  */
 public class EventService {
     

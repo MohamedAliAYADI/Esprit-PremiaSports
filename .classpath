@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="extension-jar/mybatis-3.5.10.jar"/>
+	<classpathentry kind="lib" path="extension-jar/mysql-connector-java-8.0.29.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

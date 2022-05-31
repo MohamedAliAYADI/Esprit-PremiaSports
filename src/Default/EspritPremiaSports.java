@@ -3,19 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package event;
+package Default;
 
 /**
  *
- * @author nemya
+ * @author Geekz
  */
-public class Event {
+public class EspritPremiaSports {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("EspritPremiaSports !");
+
     }
     
 }
