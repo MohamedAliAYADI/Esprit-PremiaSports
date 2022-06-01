@@ -21,7 +21,7 @@ public class EspritPremiaSports {
        
         //Instanciating a user service
         UserService us = new UserService();
-        User u = new User("safsoufa", "slimenhobi");
+        User u = new User("test", "test");
         User u1 = new User();
         // Listing all users;
         //System.out.println(us.listUsers());
