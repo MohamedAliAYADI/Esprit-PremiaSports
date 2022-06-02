@@ -107,7 +107,7 @@ public class CoachService {
 
     
     public Coach getCoachById(int id) {
-            Coach c = new Coach();
+        Coach c = new Coach();
         try {
             String req = "SELECT * FROM coach where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);

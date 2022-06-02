@@ -10,17 +10,22 @@ public class Reservation {
 	private int coach_id;
 	private String title;
 	private String type;
+	private String state;
 	private Date end_time;
 	private Date start_time;
 	private float price;
 	
-	public Reservation(int user_id, int coach_id, String title, String type, Date end_time, Date start_time,
-			float price) {
+
+	public Reservation () {}
+	
+	public Reservation(int user_id, int coach_id, String title, String type, String state, Date end_time,
+			Date start_time, float price) {
 		super();
 		this.user_id = user_id;
 		this.coach_id = coach_id;
 		this.title = title;
 		this.type = type;
+		this.state = state;
 		this.end_time = end_time;
 		this.start_time = start_time;
 		this.price = price;
@@ -88,6 +93,14 @@ public class Reservation {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 	
 
