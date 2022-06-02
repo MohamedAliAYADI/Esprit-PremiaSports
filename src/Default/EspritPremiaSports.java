@@ -5,8 +5,8 @@
  */
 package Default;
 
-import edu.esprit.entities.User;
-import edu.esprit.services.UserService;
+import edu.esprit.entities.Client;
+import edu.esprit.services.ClientService;
 
 /**
  *
@@ -20,22 +20,24 @@ public class EspritPremiaSports {
     public static void main(String[] args) {
        
         //Instanciating a user service
-        UserService us = new UserService();
-        User u = new User("test", "test");
-        User u1 = new User();
+        ClientService cs = new ClientService();
+
+        
+        Client c = new Client("test", "i");
+         Client cupdate = new Client("update", "update");
         // Listing all users;
-        //System.out.println(us.listUsers());
+        System.out.println(cs.listUsers());
         
        // Listing a User BY ID
-       // System.out.println(us.listUsersById(1));
+     //  System.out.println(cs.listUsersById(1));
         
         //Add User to DB
-        //us.addUser(u);
+        //cs.addUser(c);
         
         //Remove User from DB
-        us.removeUser(1);
+        //cs.removeUser(3);
         //Update User 
-       //us.updateUser(1);
+     // cs.updateUser(cupdate,1);
       
         
         
