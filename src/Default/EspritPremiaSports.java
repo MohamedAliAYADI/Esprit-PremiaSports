@@ -23,8 +23,8 @@ public class EspritPremiaSports {
         // TODO code application logic here
         System.out.println("EspritPremiaSports !");
   MyConnection mc= MyConnection.getInstance();
-//        Reservationservices rse=new Reservationservices();
-//        System.out.println(rse.displayReservation());
+        Reservationservices rse=new Reservationservices();
+        System.out.println(rse.displayReservation());
         
         
         //********** event and participation ************
