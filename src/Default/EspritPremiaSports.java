@@ -5,8 +5,11 @@
  */
 package Default;
 
+import edu.esprit.entities.Terrain;
 import edu.esprit.services.Reservationservices;
+import edu.esprit.services.TerrainService;
 import edu.esprit.utils.MyConnection;
+import java.sql.SQLException;
 
 /**
  *
@@ -23,6 +26,20 @@ public class EspritPremiaSports {
   MyConnection mc= MyConnection.getInstance();
         Reservationservices rse=new Reservationservices();
         System.out.println(rse.displayReservation());
+
+        Terrain terrain =new Terrain("sansiro", "foot", "ariana", "jour", "712547889");
+
+        TerrainService terrainservcie =new TerrainService();
+        
+       terrainservcie.InsertIntoTerrain(terrain);
+       
+       System.out.println(terrainservcie.displayTerrain());
+       terrainservcie.DeleteTerrain(1);
+       
+       Terrain terrainmodifier=new Terrain(3,"camp nou", "foot", "ariana", "jour", "712547889");
+       
+       terrainservcie.updateTerrain(terrainmodifier);
     }
+    
     
 }
