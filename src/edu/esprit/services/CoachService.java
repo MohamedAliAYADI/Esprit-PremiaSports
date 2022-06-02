@@ -31,14 +31,16 @@ public class CoachService implements UserServicesInterface{
       Coach c;
          c = (Coach)o;
                    try {
-            String req = "INSERT INTO `coach`(`nom`, `prenom`) VALUES (?,?)";
+            String req = "INSERT INTO `coach`(`pseudo`, `nom` , `prenom` , `password`) VALUES (?,?,?,?)";
 
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setString(1, c.getNom());
-            ps.setString(2, c.getPrenom());
+            ps.setString(1, c.getPseudo());
+            ps.setString(2, c.getPassword());
+            ps.setString(3, c.getNom());
+            ps.setString(4, c.getPrenom());
             ps.executeUpdate();
 
-            System.out.println("User "
+            System.out.println("Coach "
                     + c.getNom()+ " added successfully" );
 
         } catch (SQLException ex) {
@@ -47,18 +49,21 @@ public class CoachService implements UserServicesInterface{
     }
 
     
+     @Override
     public void updateUser(Object o, int id) {
-        Client c;
-         c = (Client)o;
+        Coach c;
+         c = (Coach)o;
                  try {
               
-              String sql = "UPDATE `coach` SET `nom`= ? ,`prenom`= ?  WHERE id = ?";
+              String sql = "UPDATE `coach` SET `pseudo`= ?,`password`= ? ,`nom`= ? ,`prenom`= ?  WHERE id = ?";
            PreparedStatement ps = cnx.prepareStatement(sql);
-           ps.setString(1, c.getNom());
-           ps.setString(2, c.getPrenom());
-           ps.setInt(3, id);
+           ps.setString(1, c.getPseudo());
+           ps.setString(2, c.getPassword());
+           ps.setString(3, c.getNom());
+           ps.setString(4, c.getPrenom());
+           ps.setInt(5, id);
             ps.executeUpdate();
-                     System.out.println("User "+ c.getNom() +" Updated successfully");
+                     System.out.println("Coach "+ c.getNom() +" Updated successfully");
              
        } catch (SQLException ex) {
            System.out.println("error updating" + ex);
@@ -73,7 +78,7 @@ public class CoachService implements UserServicesInterface{
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
            prepDelete.setInt(1, id);
            prepDelete.execute();
-           System.out.println("User Deleted Successfully" );
+           System.out.println("Coach Deleted Successfully" );
        } catch (SQLException ex) {
            System.out.println("error deleting" + ex );
        }
@@ -82,7 +87,7 @@ public class CoachService implements UserServicesInterface{
 
     @Override
     public List<Object> listUsers() {
-             List clients = new ArrayList<>();
+             List coachs = new ArrayList<>();
         
         try {
 
@@ -93,12 +98,12 @@ public class CoachService implements UserServicesInterface{
             
             while (rs.next()) {
                 
-                Client c = new Client();
+                Coach c = new Coach();
                 c.setId(rs.getInt(1));
                 c.setPseudo(rs.getString("nom"));
                 c.setPassword(rs.getString("prenom"));
                 System.out.println("adding");
-                clients.add(c);
+                coachs.add(c);
                 
             }
 
@@ -106,12 +111,13 @@ public class CoachService implements UserServicesInterface{
             System.out.println("error adding " + ex );
             }
 
-        return clients;  
+        return coachs;  
     }
 
     
+     @Override
     public Object listUsersById(int id) {
-            Client c = new Client();
+            Coach c = new Coach();
         try {
             String req = "SELECT * FROM coach where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);

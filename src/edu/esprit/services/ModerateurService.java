@@ -6,7 +6,7 @@
 package edu.esprit.services;
 
 import edu.esprit.entities.Client;
-import edu.esprit.entities.User;
+import edu.esprit.entities.Moderateur;
 import edu.esprit.utils.MyConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,18 +27,20 @@ public class ModerateurService implements UserServicesInterface{
 
     @Override
     public void addUser(Object o) {
-      Client c;
-         c = (Client)o;
+      Moderateur m;
+         m = (Moderateur)o;
                    try {
-            String req = "INSERT INTO `moderateur`(`nom`, `prenom`) VALUES (?,?)";
+            String req = "INSERT INTO `moderateur`(`pseudo`, `nom` , `prenom` , `password`) VALUES (?,?,?,?)";
 
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setString(1, c.getNom());
-            ps.setString(2, c.getPrenom());
+            ps.setString(1, m.getPseudo());
+            ps.setString(2, m.getNom());
+            ps.setString(3, m.getPrenom());
+            ps.setString(4, m.getPassword());
             ps.executeUpdate();
 
-            System.out.println("User "
-                    + c.getNom()+ " added successfully" );
+            System.out.println("moderateur "
+                    + m.getNom()+ " added successfully" );
 
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,18 +48,21 @@ public class ModerateurService implements UserServicesInterface{
     }
 
     
+        @Override
     public void updateUser(Object o, int id) {
-        Client c;
-         c = (Client)o;
+        Moderateur m;
+         m = (Moderateur)o;
                  try {
               
-              String sql = "UPDATE `moderateur` SET `nom`= ? ,`prenom`= ?  WHERE id = ?";
+              String sql = "UPDATE `moderateur` SET `pseudo`= ?,`password`= ? ,`nom`= ? ,`prenom`= ?  WHERE id = ?";
            PreparedStatement ps = cnx.prepareStatement(sql);
-           ps.setString(1, c.getNom());
-           ps.setString(2, c.getPrenom());
-           ps.setInt(3, id);
+            ps.setString(1, m.getPseudo());
+           ps.setString(2, m.getPassword());
+           ps.setString(3, m.getNom());
+           ps.setString(4, m.getPrenom());
+           ps.setInt(5, id);
             ps.executeUpdate();
-                     System.out.println("User "+ c.getNom() +" Updated successfully");
+                     System.out.println("moderateur "+ m.getNom() +" Updated successfully");
              
        } catch (SQLException ex) {
            System.out.println("error updating" + ex);
@@ -72,7 +77,7 @@ public class ModerateurService implements UserServicesInterface{
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
            prepDelete.setInt(1, id);
            prepDelete.execute();
-           System.out.println("User Deleted Successfully" );
+           System.out.println("moderateur Deleted Successfully" );
        } catch (SQLException ex) {
            System.out.println("error deleting" + ex );
        }
@@ -81,7 +86,7 @@ public class ModerateurService implements UserServicesInterface{
 
     @Override
     public List<Object> listUsers() {
-             List clients = new ArrayList<>();
+             List mods = new ArrayList<>();
         
         try {
 
@@ -92,12 +97,12 @@ public class ModerateurService implements UserServicesInterface{
             
             while (rs.next()) {
                 
-                Client c = new Client();
-                c.setId(rs.getInt(1));
-                c.setPseudo(rs.getString("nom"));
-                c.setPassword(rs.getString("prenom"));
+                Moderateur m = new Moderateur();
+                m.setId(rs.getInt(1));
+                m.setPseudo(rs.getString("nom"));
+                m.setPassword(rs.getString("prenom"));
                 System.out.println("adding");
-                clients.add(c);
+                mods.add(m);
                 
             }
 
@@ -105,21 +110,22 @@ public class ModerateurService implements UserServicesInterface{
             System.out.println("error adding " + ex );
             }
 
-        return clients;  
+        return mods;  
     }
 
     
+        @Override
     public Object listUsersById(int id) {
-            Client c = new Client();
+            Moderateur m = new Moderateur();
         try {
             String req = "SELECT * FROM moderateur where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                c.setId(rs.getInt(1));
-                c.setPseudo(rs.getString("nom"));
-                c.setPassword(rs.getString("prenom"));
+                m.setId(rs.getInt(1));
+                m.setPseudo(rs.getString("nom"));
+                m.setPassword(rs.getString("prenom"));
                                    }
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,7 +133,7 @@ public class ModerateurService implements UserServicesInterface{
 
 
         
-        return c;
+        return m;
 
 
 
