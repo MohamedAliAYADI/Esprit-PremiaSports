@@ -3,7 +3,7 @@ package edu.esprit.entities;
 
 import java.util.Date;
 
-public class Reservation {
+public class ReservationTraining {
 
 	private int id;
 	private int user_id;
@@ -16,9 +16,9 @@ public class Reservation {
 	private float price;
 	
 
-	public Reservation () {}
+	public ReservationTraining () {}
 	
-	public Reservation(int user_id, int coach_id, String title, String type, String state, Date end_time,
+	public ReservationTraining(int user_id, int coach_id, String title, String type, String state, Date end_time,
 			Date start_time, float price) {
 		super();
 		this.user_id = user_id;
