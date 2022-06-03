@@ -23,8 +23,8 @@ public class ReservationTranningService {
             ps.setString(3, r.getTitle());
             ps.setString(4, r.getType());
             ps.setString(5, r.getState());
-            ps.setDate(6, (java.sql.Date) r.getEnd_time());
-            ps.setDate(7, (java.sql.Date) r.getStart_time());
+            ps.setString(6, r.getEnd_time());
+            ps.setString(7, r.getStart_time());
             ps.setDouble(8, r.getPrice());
             ps.executeUpdate();
 
@@ -45,8 +45,8 @@ public class ReservationTranningService {
             ps.setString(3, r.getTitle());
             ps.setString(4, r.getType());
             ps.setString(5, r.getState());
-            ps.setDate(6, (java.sql.Date) r.getEnd_time());
-            ps.setDate(7, (java.sql.Date) r.getStart_time());
+            ps.setString(6, r.getEnd_time());
+            ps.setString(7, r.getStart_time());
             ps.setDouble(8, r.getPrice());
             ps.setInt(9, id);
             ps.executeUpdate();
@@ -90,8 +90,8 @@ public class ReservationTranningService {
                 r.setCoach_id(rs.getInt("coach_id"));
                 r.setTitle(rs.getString("title"));
                 r.setState(rs.getString("state"));
-                r.setEnd_time(rs.getDate("end_time"));
-                r.setStart_time(rs.getDate("start_time"));
+                r.setEnd_time(rs.getString("end_time"));
+                r.setStart_time(rs.getString("start_time"));
                 r.setPrice(rs.getFloat("price")); 
                 
                 reservations.add(r);
@@ -123,8 +123,8 @@ public class ReservationTranningService {
                 r.setCoach_id(rs.getInt("coach_id"));
                 r.setTitle(rs.getString("title"));
                 r.setState(rs.getString("state"));
-                r.setEnd_time(rs.getDate("end_time"));
-                r.setStart_time(rs.getDate("start_time"));
+                r.setEnd_time(rs.getString("end_time"));
+                r.setStart_time(rs.getString("start_time"));
                 r.setPrice(rs.getFloat("price")); 
                 
                 reservations.add(r);

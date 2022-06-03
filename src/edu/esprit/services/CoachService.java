@@ -20,7 +20,7 @@ public class CoachService {
             ps.setString(1, c.getFirst_name());
             ps.setString(2, c.getLast_name());
             ps.setString(3, c.getGender());
-            ps.setDate(4, (java.sql.Date) c.getBirthday());
+            ps.setString(4, c.getBirthday());
             ps.setString(5, c.getEmail());
             ps.setString(6, c.getPost_work());
             ps.setString(7, c.getCompany_name());
@@ -42,7 +42,7 @@ public class CoachService {
            ps.setString(1, c.getFirst_name());
            ps.setString(2, c.getLast_name());
            ps.setString(3, c.getGender());
-           ps.setDate(4, (java.sql.Date) c.getBirthday());
+           ps.setString(4, c.getBirthday());
            ps.setString(5, c.getEmail());
            ps.setString(6, c.getPost_work());
            ps.setString(7, c.getCompany_name());
@@ -91,7 +91,7 @@ public class CoachService {
                 c.setLast_name(rs.getString("last_name"));
                 c.setGender(rs.getString("gender"));
                 c.setEmail(rs.getString("email"));
-                c.setBirthday(rs.getDate("birthday"));
+                c.setBirthday(rs.getString("birthday"));
                 c.setPost_work(rs.getString("post_work"));
                 c.setCompany_name(rs.getString("company_name"));                
                 coachs.add(c);
@@ -119,7 +119,7 @@ public class CoachService {
                c.setLast_name(rs.getString("last_name"));
                c.setGender(rs.getString("gender"));
                c.setEmail(rs.getString("email"));
-               c.setBirthday(rs.getDate("birthday"));
+               c.setBirthday(rs.getString("birthday"));
                c.setPost_work(rs.getString("post_work"));
                c.setCompany_name(rs.getString("company_name")); 
             }

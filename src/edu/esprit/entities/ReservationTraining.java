@@ -11,15 +11,15 @@ public class ReservationTraining {
 	private String title;
 	private String type;
 	private String state;
-	private Date end_time;
-	private Date start_time;
+	private String end_time;
+	private String start_time;
 	private float price;
 	
 
 	public ReservationTraining () {}
 	
-	public ReservationTraining(int user_id, int coach_id, String title, String type, String state, Date end_time,
-			Date start_time, float price) {
+	public ReservationTraining(int user_id, int coach_id, String title, String type, String state, String end_time,
+			String start_time, float price) {
 		super();
 		this.user_id = user_id;
 		this.coach_id = coach_id;
@@ -63,19 +63,19 @@ public class ReservationTraining {
 		this.type = type;
 	}
 
-	public Date getEnd_time() {
+	public String getEnd_time() {
 		return end_time;
 	}
 
-	public void setEnd_time(Date end_time) {
+	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
 	}
 
-	public Date getStart_time() {
+	public String getStart_time() {
 		return start_time;
 	}
 
-	public void setStart_time(Date start_time) {
+	public void setStart_time(String start_time) {
 		this.start_time = start_time;
 	}
 
