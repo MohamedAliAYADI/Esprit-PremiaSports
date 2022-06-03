@@ -5,13 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import edu.esprit.entities.ReservationTraining;
 import edu.esprit.utils.MyConnection;
 
-public class ReservationService {
+public class ReservationTranningService {
     Connection cnx = MyConnection.getInstance().cnx;
     
     public void addReservation(ReservationTraining r) {
