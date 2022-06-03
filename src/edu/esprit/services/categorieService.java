@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  */
 public class categorieService {
 
-    Connection cnx = MyConnection.getInstance().getCnx();
+    Connection cnx = MyConnection.getInstance().cnx;
 
     public categories ajouterCategories(categories c) { 
 

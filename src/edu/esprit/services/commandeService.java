@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 public class commandeService {
 
-    Connection cnx = MyConnection.getInstance().getCnx();
+    Connection cnx = MyConnection.getInstance().cnx;
      public commandes ajouterCommande (commandes c) { 
          
      

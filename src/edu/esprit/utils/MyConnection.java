@@ -17,37 +17,28 @@ import java.util.logging.Logger;
  */
 public class MyConnection {
 
-    public String USERNAME = "root";
-    public String PASSWORD = "";
-    public String URL = "jdbc:mysql://localhost:3306/premia_sports";
-    private com.mysql.jdbc.Connection cnx;
-    static MyConnection instance = null;
-
-    public MyConnection() {
-
+    public String url="jdbc:mysql://localhost:3306/premia_sports";
+    public String login="root";
+    public String pwd="";
+    public static Connection cnx;
+    
+    static MyConnection instance=null;
+   public MyConnection() {
+        
         try {
-            cnx = (com.mysql.jdbc.Connection) DriverManager.getConnection(URL,USERNAME ,PASSWORD);
-
+           cnx=DriverManager.getConnection(url, login, pwd);
+            System.out.println("Connexion etablie");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-
         }
-
-        System.out.println("Base de donné connecté avec succé ");
-    }
-
-    public com.mysql.jdbc.Connection getCnx() {
-        return cnx;
+      
     }
 
     public static MyConnection getInstance() {
-        if(instance == null)
-            instance = new MyConnection();
-
-        return instance;
+      if(instance ==null)
+          instance =new MyConnection();
+      
+          return instance;
+      
     }
-
-
-
 }
-    
