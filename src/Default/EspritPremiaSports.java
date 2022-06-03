@@ -51,8 +51,8 @@ public class EspritPremiaSports {
 
 
         //Coach test instances
-        Coach co = new Coach("AhmedBiceps", "123456", "Ahmed", "Ahmed");
-        Coach coupdate = new Coach("Ahmed", "9632", "Ahmed", "Ben foulen");
+        //Coach co = new Coach("AhmedBiceps", "123456", "Ahmed", "Ahmed");
+        //Coach coupdate = new Coach("Ahmed", "9632", "Ahmed", "Ben foulen");
         // Listing all users;
         //System.out.println(coachs.listUsers());
         // Listing a User BY ID
@@ -65,8 +65,8 @@ public class EspritPremiaSports {
         //coachs.updateUser(coupdate,1);
         
         //Moderateur test instances
-        Moderateur md = new Moderateur("admin", "nimda", "Ali", "Salah") ;
-        Moderateur mdupdate = new Moderateur("sudo", "nimda", "Mohamed", "Salah") ;
+        //Moderateur md = new Moderateur("admin", "nimda", "Ali", "Salah") ;
+        //Moderateur mdupdate = new Moderateur("sudo", "nimda", "Mohamed", "Salah") ;
         // Listing all users;
         //System.out.println(ms.listUsers());
         // Listing a User BY ID
@@ -79,32 +79,32 @@ public class EspritPremiaSports {
         //ms.updateUser(mdupdate,1);
         
         //Pclub test instances
-        Pclub pc = new Pclub("maria123", "airam", "euro" , "ford");
-        Pclub pcupdate = new Pclub("cassandra321", "beverly", "euro" , "nissan");
+        //Pclub pc = new Pclub("maria123", "airam", "euro" , "ford");
+        //Pclub pcupdate = new Pclub("cassandra321", "beverly", "euro" , "nissan");
         // Listing all users;
         //System.out.println(pcs.listUsers());
         // Listing a User BY ID
         //System.out.println(pcs.listUsersById(1));
         //Add User to DB
-        //pcs.addUser(c);
+        //pcs.addUser(pc);
         //Remove User from DB
-        //pcs.removeUser(3);
+        //pcs.removeUser(1);
         //Update User 
-        // pcs.updateUser(cupdate,1);
+        //pcs.updateUser(pcupdate,1);
         
         //Pterrain test instances
-        Pterrain pt = new Pterrain("kyle123", "dollar", "alpha");
-        Pterrain ptupdate = new Pterrain("johnny", "dollar", "beta");
+        //Pterrain pt = new Pterrain("kyle123", "dollar", "alpha");
+        //Pterrain ptupdate = new Pterrain("johnny", "dollar", "beta");
         // Listing all users;
         //System.out.println(pts.listUsers());
         // Listing a User BY ID
         //System.out.println(pts.listUsersById(1));
         //Add User to DB
-        //pts.addUser(c);
+        //pts.addUser(pt);
         //Remove User from DB
         //pts.removeUser(3);
         //Update User 
-        // pts.updateUser(cupdate,1);
+        // pts.updateUser(ptupdate,1);
         
 
         

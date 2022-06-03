@@ -6,6 +6,7 @@
 package edu.esprit.services;
 
 import edu.esprit.entities.Client;
+import edu.esprit.entities.Pterrain;
 import edu.esprit.entities.User;
 import edu.esprit.utils.MyConnection;
 import java.sql.Connection;
@@ -27,18 +28,18 @@ public class PterrainService implements UserServicesInterface{
 
     @Override
     public void addUser(Object o) {
-      Client c;
-         c = (Client)o;
+      Pterrain pt;
+         pt = (Pterrain)o;
                    try {
-            String req = "INSERT INTO `pterrain`(`nom`, `prenom`) VALUES (?,?)";
+            String req = "INSERT INTO `pterrain`(`pseudo`, `nom` , `prenom` , `password`) VALUES (?,?,?,?)";
 
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setString(1, c.getNom());
-            ps.setString(2, c.getPrenom());
+            ps.setString(1, pt.getNom());
+            ps.setString(2, pt.getPrenom());
             ps.executeUpdate();
 
             System.out.println("User "
-                    + c.getNom()+ " added successfully" );
+                    + pt.getNom()+ " added successfully" );
 
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,18 +47,21 @@ public class PterrainService implements UserServicesInterface{
     }
 
     
+    @Override
     public void updateUser(Object o, int id) {
-        Client c;
-         c = (Client)o;
+       Pterrain pt;
+         pt = (Pterrain)o;
                  try {
               
-              String sql = "UPDATE `pterrain` SET `nom`= ? ,`prenom`= ?  WHERE id = ?";
+              String sql = "UPDATE `pterrain` SET `pseudo`= ?,`password`= ? ,`nom`= ? ,`prenom`= ?  WHERE id = ?";
            PreparedStatement ps = cnx.prepareStatement(sql);
-           ps.setString(1, c.getNom());
-           ps.setString(2, c.getPrenom());
-           ps.setInt(3, id);
+            ps.setString(1, pt.getPseudo());
+           ps.setString(2, pt.getPassword());
+           ps.setString(3, pt.getNom());
+           ps.setString(4, pt.getPrenom());
+           ps.setInt(5, id);
             ps.executeUpdate();
-                     System.out.println("User "+ c.getNom() +" Updated successfully");
+                     System.out.println("User "+ pt.getNom() +" Updated successfully");
              
        } catch (SQLException ex) {
            System.out.println("error updating" + ex);
@@ -109,6 +113,7 @@ public class PterrainService implements UserServicesInterface{
     }
 
     
+    @Override
     public Object listUsersById(int id) {
             Client c = new Client();
         try {

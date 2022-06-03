@@ -5,8 +5,7 @@
  */
 package edu.esprit.services;
 
-import edu.esprit.entities.Client;
-import edu.esprit.entities.User;
+import edu.esprit.entities.Pclub;
 import edu.esprit.utils.MyConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,18 +26,20 @@ public class PclubService implements UserServicesInterface{
 
     @Override
     public void addUser(Object o) {
-      Client c;
-         c = (Client)o;
+      Pclub pc;
+         pc = (Pclub)o;
                    try {
-            String req = "INSERT INTO `pclub`(`nom`, `prenom`) VALUES (?,?)";
+            String req = "INSERT INTO `pclub`(`pseudo`, `nom` , `prenom` , `password`) VALUES (?,?,?,?)";
 
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setString(1, c.getNom());
-            ps.setString(2, c.getPrenom());
+            ps.setString(1, pc.getPseudo());
+            ps.setString(2, pc.getNom());
+            ps.setString(3, pc.getPrenom());
+            ps.setString(4, pc.getPassword());
             ps.executeUpdate();
 
-            System.out.println("User "
-                    + c.getNom()+ " added successfully" );
+            System.out.println("pclub "
+                    + pc.getNom()+ " added successfully" );
 
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,18 +47,21 @@ public class PclubService implements UserServicesInterface{
     }
 
     
+     @Override
     public void updateUser(Object o, int id) {
-        Client c;
-         c = (Client)o;
+        Pclub pc;
+         pc = (Pclub)o;
                  try {
               
-              String sql = "UPDATE `pclub` SET `nom`= ? ,`prenom`= ?  WHERE id = ?";
+              String sql = "UPDATE `pclub` SET `pseudo`= ?,`password`= ? ,`nom`= ? ,`prenom`= ?  WHERE id = ?";
            PreparedStatement ps = cnx.prepareStatement(sql);
-           ps.setString(1, c.getNom());
-           ps.setString(2, c.getPrenom());
-           ps.setInt(3, id);
+            ps.setString(1, pc.getPseudo());
+           ps.setString(2, pc.getPassword());
+           ps.setString(3, pc.getNom());
+           ps.setString(4, pc.getPrenom());
+           ps.setInt(5, id);
             ps.executeUpdate();
-                     System.out.println("User "+ c.getNom() +" Updated successfully");
+                     System.out.println("pclub "+ pc.getNom() +" Updated successfully");
              
        } catch (SQLException ex) {
            System.out.println("error updating" + ex);
@@ -72,7 +76,7 @@ public class PclubService implements UserServicesInterface{
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
            prepDelete.setInt(1, id);
            prepDelete.execute();
-           System.out.println("User Deleted Successfully" );
+           System.out.println("pclub Deleted Successfully" );
        } catch (SQLException ex) {
            System.out.println("error deleting" + ex );
        }
@@ -81,7 +85,7 @@ public class PclubService implements UserServicesInterface{
 
     @Override
     public List<Object> listUsers() {
-             List clients = new ArrayList<>();
+             List pclubs = new ArrayList<>();
         
         try {
 
@@ -92,12 +96,12 @@ public class PclubService implements UserServicesInterface{
             
             while (rs.next()) {
                 
-                Client c = new Client();
-                c.setId(rs.getInt(1));
-                c.setPseudo(rs.getString("nom"));
-                c.setPassword(rs.getString("prenom"));
+                Pclub pc = new Pclub();
+                pc.setId(rs.getInt(1));
+                pc.setPseudo(rs.getString("nom"));
+                pc.setPassword(rs.getString("prenom"));
                 System.out.println("adding");
-                clients.add(c);
+                pclubs.add(pc);
                 
             }
 
@@ -105,21 +109,22 @@ public class PclubService implements UserServicesInterface{
             System.out.println("error adding " + ex );
             }
 
-        return clients;  
+        return pclubs;  
     }
 
     
+     @Override
     public Object listUsersById(int id) {
-            Client c = new Client();
+            Pclub pc = new Pclub();
         try {
             String req = "SELECT * FROM pclub where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                c.setId(rs.getInt(1));
-                c.setPseudo(rs.getString("nom"));
-                c.setPassword(rs.getString("prenom"));
+                pc.setId(rs.getInt(1));
+                pc.setPseudo(rs.getString("nom"));
+                pc.setPassword(rs.getString("prenom"));
                                    }
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,7 +132,7 @@ public class PclubService implements UserServicesInterface{
 
 
         
-        return c;
+        return pc;
 
 
 

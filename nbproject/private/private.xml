@@ -4,6 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Slimen%20OUNI/Documents/NetBeansProjects/Esprit-PremiaSports/src/Default/EspritPremiaSports.java</file>
+            <file>file:/C:/Users/Slimen%20OUNI/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/entities/Coach.java</file>
+            <file>file:/C:/Users/Slimen%20OUNI/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/services/CoachService.java</file>
+            <file>file:/C:/Users/Slimen%20OUNI/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/entities/User.java</file>
+            <file>file:/C:/Users/Slimen%20OUNI/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/services/ModerateurService.java</file>
+            <file>file:/C:/Users/Slimen%20OUNI/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/entities/Client.java</file>
         </group>
     </open-files>
 </project-private>
