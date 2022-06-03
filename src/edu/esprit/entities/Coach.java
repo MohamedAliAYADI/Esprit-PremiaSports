@@ -8,7 +8,7 @@ public class Coach {
 	private String first_name;
 	private String last_name;
 	private String gender;
-	private Date birthday;
+	private String birthday;
 	private String email;
 	private String post_work;
 	private String company_name;
@@ -16,7 +16,7 @@ public class Coach {
 	public Coach() {	
 	}
 
-	public Coach(String first_name, String last_name, String gender, Date birthday, String email, String post_work,
+	public Coach(String first_name, String last_name, String gender, String birthday, String email, String post_work,
 			String company_name) {
 		super();
 		this.first_name = first_name;
@@ -52,11 +52,11 @@ public class Coach {
 		this.gender = gender;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
