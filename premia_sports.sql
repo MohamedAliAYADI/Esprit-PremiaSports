@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : ven. 03 juin 2022 à 10:18
--- Version du serveur : 5.7.36
--- Version de PHP : 7.4.26
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jun 03, 2022 at 01:37 PM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `premia_sports`
+-- Database: `premia_sports`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Table structure for table `client`
 --
 
 DROP TABLE IF EXISTS `client`;
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `coach`
+-- Table structure for table `coach`
 --
 
 DROP TABLE IF EXISTS `coach`;
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `coach` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `moderateur`
+-- Table structure for table `moderateur`
 --
 
 DROP TABLE IF EXISTS `moderateur`;
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `moderateur` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pclub`
+-- Table structure for table `pclub`
 --
 
 DROP TABLE IF EXISTS `pclub`;
@@ -123,12 +123,12 @@ CREATE TABLE IF NOT EXISTS `pclub` (
   `profession` varchar(255) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pterrain`
+-- Table structure for table `pterrain`
 --
 
 DROP TABLE IF EXISTS `pterrain`;
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `pterrain` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `test`
+-- Table structure for table `test`
 --
 
 DROP TABLE IF EXISTS `test`;
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `test` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `test`
+-- Dumping data for table `test`
 --
 
 INSERT INTO `test` (`ID`, `TITLE`) VALUES
