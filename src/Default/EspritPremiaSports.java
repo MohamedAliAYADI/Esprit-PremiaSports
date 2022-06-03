@@ -5,6 +5,9 @@
  */
 package Default;
 
+import edu.esprit.services.Reservationservices;
+import edu.esprit.utils.MyConnection;
+
 /**
  *
  * @author Geekz
@@ -17,7 +20,9 @@ public class EspritPremiaSports {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("EspritPremiaSports !");
-
+  MyConnection mc= MyConnection.getInstance();
+        Reservationservices rse=new Reservationservices();
+        System.out.println(rse.displayReservation());
     }
     
 }
