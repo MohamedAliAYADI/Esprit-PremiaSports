@@ -9,7 +9,6 @@ package edu.esprit.services;
 
 
 import edu.esprit.entities.Client;
-import edu.esprit.entities.User;
 import edu.esprit.utils.MyConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,7 +49,8 @@ public class ClientService implements UserServicesInterface{
     }
 
     
-    public void updateUser(Object o, int id) {
+    @Override
+    public void updateUser(Object o) {
         Client c;
          c = (Client)o;
                  try {
@@ -59,7 +59,7 @@ public class ClientService implements UserServicesInterface{
            PreparedStatement ps = cnx.prepareStatement(sql);
            ps.setString(1, c.getNom());
            ps.setString(2, c.getPrenom());
-           ps.setInt(3, id);
+           ps.setInt(3, c.getId());
             ps.executeUpdate();
                      System.out.println("User "+ c.getNom() +" Updated successfully");
              
@@ -70,11 +70,13 @@ public class ClientService implements UserServicesInterface{
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUser(Object o) {
+            Client c;
+         c = (Client)o;
        try {
            String q1 = "DELETE FROM client WHERE id = ?";
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
-           prepDelete.setInt(1, id);
+           prepDelete.setInt(1, c.getId());
            prepDelete.execute();
            System.out.println("User Deleted Successfully" );
        } catch (SQLException ex) {
@@ -112,13 +114,15 @@ public class ClientService implements UserServicesInterface{
         return clients;  
     }
 
-    
-    public Object listUsersById(int id) {
-            Client c = new Client();
+    @Override
+    public Object listUsersById(Object o) {
+            Client c;
+         c = (Client)o;
+            
         try {
             String req = "SELECT * FROM client where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, id);
+            ps.setInt(1, c.getId());
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                 c.setId(rs.getInt(1));

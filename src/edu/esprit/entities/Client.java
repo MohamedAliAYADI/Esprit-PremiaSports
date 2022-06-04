@@ -37,6 +37,18 @@ public class Client extends User{
 
     }
     
+      public Client(int id) {
+     
+        this.id = id;
+
+    }
+
+    public Client(int id, String nom, String prenom) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+    
     
     
     public Client(int id, String pseudo, String password, String nom, String prenom, Date DOB, String email, String adress, String telephone, String civilite, String genre, int taille, int poids, String profession, String img) {

@@ -48,7 +48,7 @@ public class PterrainService implements UserServicesInterface{
 
     
     @Override
-    public void updateUser(Object o, int id) {
+    public void updateUser(Object o) {
        Pterrain pt;
          pt = (Pterrain)o;
                  try {
@@ -59,7 +59,7 @@ public class PterrainService implements UserServicesInterface{
            ps.setString(2, pt.getPassword());
            ps.setString(3, pt.getNom());
            ps.setString(4, pt.getPrenom());
-           ps.setInt(5, id);
+           ps.setInt(5, pt.getId());
             ps.executeUpdate();
                      System.out.println("User "+ pt.getNom() +" Updated successfully");
              
@@ -70,11 +70,13 @@ public class PterrainService implements UserServicesInterface{
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUser(Object o) {
+         Pterrain pt;
+         pt = (Pterrain)o;
        try {
            String q1 = "DELETE FROM pterrain WHERE id = ?";
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
-           prepDelete.setInt(1, id);
+           prepDelete.setInt(1, pt.getId());
            prepDelete.execute();
            System.out.println("User Deleted Successfully" );
        } catch (SQLException ex) {
@@ -114,17 +116,18 @@ public class PterrainService implements UserServicesInterface{
 
     
     @Override
-    public Object listUsersById(int id) {
-            Client c = new Client();
+    public Object listUsersById(Object o) {
+            Pterrain pt;
+         pt = (Pterrain)o;
         try {
             String req = "SELECT * FROM pterrain where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, id);
+            ps.setInt(1, pt.getId());
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                c.setId(rs.getInt(1));
-                c.setPseudo(rs.getString("nom"));
-                c.setPassword(rs.getString("prenom"));
+                pt.setId(rs.getInt(1));
+                pt.setPseudo(rs.getString("nom"));
+                pt.setPassword(rs.getString("prenom"));
                                    }
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
@@ -132,7 +135,7 @@ public class PterrainService implements UserServicesInterface{
 
 
         
-        return c;
+        return pt;
 
 
 

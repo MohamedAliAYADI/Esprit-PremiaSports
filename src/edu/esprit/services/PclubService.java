@@ -47,8 +47,8 @@ public class PclubService implements UserServicesInterface{
     }
 
     
-     @Override
-    public void updateUser(Object o, int id) {
+    @Override
+    public void updateUser(Object o) {
         Pclub pc;
          pc = (Pclub)o;
                  try {
@@ -59,7 +59,7 @@ public class PclubService implements UserServicesInterface{
            ps.setString(2, pc.getPassword());
            ps.setString(3, pc.getNom());
            ps.setString(4, pc.getPrenom());
-           ps.setInt(5, id);
+           ps.setInt(5, pc.getId());
             ps.executeUpdate();
                      System.out.println("pclub "+ pc.getNom() +" Updated successfully");
              
@@ -70,11 +70,13 @@ public class PclubService implements UserServicesInterface{
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUser(Object o) {
+           Pclub pc;
+         pc = (Pclub)o;
        try {
            String q1 = "DELETE FROM pclub WHERE id = ?";
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
-           prepDelete.setInt(1, id);
+           prepDelete.setInt(1,pc.getId());
            prepDelete.execute();
            System.out.println("pclub Deleted Successfully" );
        } catch (SQLException ex) {
@@ -113,13 +115,14 @@ public class PclubService implements UserServicesInterface{
     }
 
     
-     @Override
-    public Object listUsersById(int id) {
-            Pclub pc = new Pclub();
+    @Override
+    public Object listUsersById(Object o) {
+           Pclub pc;
+         pc = (Pclub)o;
         try {
             String req = "SELECT * FROM pclub where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, id);
+            ps.setInt(1, pc.getId());
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                 pc.setId(rs.getInt(1));

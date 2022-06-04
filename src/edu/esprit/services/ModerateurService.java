@@ -49,7 +49,7 @@ public class ModerateurService implements UserServicesInterface{
 
     
         @Override
-    public void updateUser(Object o, int id) {
+    public void updateUser(Object o) {
         Moderateur m;
          m = (Moderateur)o;
                  try {
@@ -60,7 +60,7 @@ public class ModerateurService implements UserServicesInterface{
            ps.setString(2, m.getPassword());
            ps.setString(3, m.getNom());
            ps.setString(4, m.getPrenom());
-           ps.setInt(5, id);
+           ps.setInt(5, m.getId());
             ps.executeUpdate();
                      System.out.println("moderateur "+ m.getNom() +" Updated successfully");
              
@@ -71,11 +71,13 @@ public class ModerateurService implements UserServicesInterface{
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUser(Object o) {
+         Moderateur m;
+         m = (Moderateur)o;
        try {
            String q1 = "DELETE FROM moderateur WHERE id = ?";
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
-           prepDelete.setInt(1, id);
+           prepDelete.setInt(1, m.getId());
            prepDelete.execute();
            System.out.println("moderateur Deleted Successfully" );
        } catch (SQLException ex) {
@@ -114,13 +116,13 @@ public class ModerateurService implements UserServicesInterface{
     }
 
     
-        @Override
-    public Object listUsersById(int id) {
+    @Override
+    public Object listUsersById(Object o) {
             Moderateur m = new Moderateur();
         try {
             String req = "SELECT * FROM moderateur where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, id);
+            ps.setInt(1, m.getId());
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                 m.setId(rs.getInt(1));

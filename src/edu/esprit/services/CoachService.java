@@ -49,8 +49,8 @@ public class CoachService implements UserServicesInterface{
     }
 
     
-     @Override
-    public void updateUser(Object o, int id) {
+    @Override
+    public void updateUser(Object o) {
         Coach c;
          c = (Coach)o;
                  try {
@@ -61,7 +61,7 @@ public class CoachService implements UserServicesInterface{
            ps.setString(2, c.getPassword());
            ps.setString(3, c.getNom());
            ps.setString(4, c.getPrenom());
-           ps.setInt(5, id);
+           ps.setInt(5, c.getId());
             ps.executeUpdate();
                      System.out.println("Coach "+ c.getNom() +" Updated successfully");
              
@@ -72,11 +72,13 @@ public class CoachService implements UserServicesInterface{
     }
 
     @Override
-    public void removeUser(int id) {
+    public void removeUser(Object o) {
+         Coach c;
+         c = (Coach)o;
        try {
            String q1 = "DELETE FROM coach WHERE id = ?";
            PreparedStatement prepDelete = cnx.prepareStatement(q1);
-           prepDelete.setInt(1, id);
+           prepDelete.setInt(1, c.getId());
            prepDelete.execute();
            System.out.println("Coach Deleted Successfully" );
        } catch (SQLException ex) {
@@ -115,13 +117,13 @@ public class CoachService implements UserServicesInterface{
     }
 
     
-     @Override
-    public Object listUsersById(int id) {
+    @Override
+    public Object listUsersById(Object o) {
             Coach c = new Coach();
         try {
             String req = "SELECT * FROM coach where id = ?";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, id);
+            ps.setInt(1, c.getId());
             ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                 c.setId(rs.getInt(1));

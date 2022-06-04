@@ -1,6 +1,6 @@
 package edu.esprit.tests;
 
-import edu.esprit.entities.Event;
+
 import edu.esprit.utils.MyConnection;
 
 
@@ -15,7 +15,7 @@ public class MainClassEvent {
     	// create instance
        MyConnection mc= MyConnection.getInstance();
        // testing some entity
-       Event e = new Event();
+ 
     }
     
 }

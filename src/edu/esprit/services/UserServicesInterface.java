@@ -15,7 +15,7 @@ import java.util.List;
 public interface UserServicesInterface {
     
     
-        public void updateUser(Object o, int id);
+        public void updateUser(Object o);
 
 
     public  void addUser(Object o);
@@ -34,12 +34,12 @@ public interface UserServicesInterface {
 //            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
-    public  void removeUser(int id);
+    public  void removeUser(Object o);
 
 
       public  List<Object> listUsers();
 
 
-    public  Object listUsersById(int id);
+    public  Object listUsersById(Object o);
 
 }
