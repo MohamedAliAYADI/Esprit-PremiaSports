@@ -11,27 +11,48 @@ import java.util.Date;
  *
  * @author emy
  */
-public class produits {
-    
+public class Produits {
+
+
     private  int id_prod ;
     private  String nom_prod ;
     
     private String Image_prod;
       private  int prixprod ;
 
-    private categories categories;
+    private Categories categories;
     
    private Date DateAjoutProd ;
 
-    public produits() {
+    public Produits() {
     }
 
-    public produits(String nom_prod, String Image_prod) {
+    public Produits(String nom_prod, String Image_prod, int prixprod, Categories categories) {
+        this.nom_prod = nom_prod;
+        this.Image_prod = Image_prod;
+        this.prixprod = prixprod;
+        this.categories = categories;
+    }
+
+    
+
+        public Produits(String nom_prod, String Image_prod, int prixprod) {
+        this.nom_prod = nom_prod;
+        this.Image_prod = Image_prod;
+        this.prixprod = prixprod;
+    }
+
+    public Produits(int id_prod, String nom_prod) {
+        this.id_prod = id_prod;
+        this.nom_prod = nom_prod;
+    }
+    
+    public Produits(String nom_prod, String Image_prod) {
         this.nom_prod = nom_prod;
         this.Image_prod = Image_prod;
     }
 
-    public produits(String nom_prod, String Image_prod, int prixprod, categories categories, Date DateAjoutProd) {
+    public Produits(String nom_prod, String Image_prod, int prixprod, Categories categories, Date DateAjoutProd) {
         this.nom_prod = nom_prod;
         this.Image_prod = Image_prod;
         this.prixprod = prixprod;
@@ -71,11 +92,11 @@ public class produits {
         this.prixprod = prixprod;
     }
 
-    public categories getCategories() {
+    public Categories getCategories() {
         return categories;
     }
 
-    public void setCategories(categories categories) {
+    public void setCategories(Categories categories) {
         this.categories = categories;
     }
 

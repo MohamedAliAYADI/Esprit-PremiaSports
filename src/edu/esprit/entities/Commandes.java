@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author user
  */
-public class commandes {
+public class Commandes {
 
     private int id_cmd;
     
@@ -20,21 +20,21 @@ public class commandes {
     //private int montantCmd;
     //private produits prod ;
 
-    public commandes() {
+    public Commandes() {
     }
 
-    public commandes(String etat_cmd, String libelle) {
+    public Commandes(String etat_cmd, String libelle) {
         this.etat_cmd = etat_cmd;
         this.libelle = libelle;
     }
 
-    public commandes(String etat_cmd, String libelle, int montantCmd) {
+    public Commandes(String etat_cmd, String libelle, int montantCmd) {
         this.etat_cmd = etat_cmd;
         this.libelle = libelle;
         //this.montantCmd = montantCmd;
     }
 
-    public commandes(int id_cmd, String etat_cmd, String libelle, int montantCmd) {
+    public Commandes(int id_cmd, String etat_cmd, String libelle, int montantCmd) {
         this.id_cmd = id_cmd;
         this.etat_cmd = etat_cmd;
         this.libelle = libelle;
@@ -43,6 +43,11 @@ public class commandes {
 
     public int getId_cmd() {
         return id_cmd;
+    }
+
+    public Commandes(int id_cmd, String etat_cmd) {
+        this.id_cmd = id_cmd;
+        this.etat_cmd = etat_cmd;
     }
 
     public void setId_cmd(int id_cmd) {

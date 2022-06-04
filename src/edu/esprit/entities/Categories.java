@@ -4,20 +4,26 @@ package edu.esprit.entities;
 import java.util.Date;
 
 
-public class categories {
+public class Categories {
     private  int id_catg ;
     private String  type ; 
     private String nom_cat ;
 
-    public categories() {
+    public Categories() {
     }
 
-    public categories(String type, String nom_cat) {
+    public Categories(int id_catg,String nom_cat) {
+        this.id_catg = id_catg;
+        this.nom_cat = nom_cat;
+    }
+
+    
+    public Categories(String type, String nom_cat) {
         this.type = type;
         this.nom_cat = nom_cat;
     }
 
-    public categories(int id_catg, String type, String nom_cat) {
+    public Categories(int id_catg, String type, String nom_cat) {
         this.id_catg = id_catg;
         this.type = type;
         this.nom_cat = nom_cat;
