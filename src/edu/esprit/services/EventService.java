@@ -81,8 +81,10 @@ public class EventService {
                }
                 return events;
            }
-           public void modifyEvent(int id,String newDate){
-               updateEvent="update event set endDate='200000000' where id='1'";
+           public void modifyEvent(Event e,String newDate){
+               updateEvent="update event set endDate='"
+                       +newDate+ "' where id="
+                      + e.getEventId() + "";
                    Statement st;
                try {
                    st = mc.cnx.createStatement();
@@ -94,8 +96,8 @@ public class EventService {
                
                
            }
-           public void deleteEvent(){
-                     deleteEvent="delete from event where id='6'";
+           public void deleteEvent(Event e){
+                     deleteEvent="delete from event where id="+e.getEventId();
                    Statement st;
                    int rowAffected = 0;
                    
@@ -112,7 +114,35 @@ public class EventService {
               
                
                
-           }           
+           }
+
+ public Event getEventByID(int id){
+        
+        Event e = new Event();
+        
+        try {
+            String req = "SELECT * from event WHERE id = ?";
+            PreparedStatement ps = mc.cnx.prepareStatement(req);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {                
+                e.setEventId(rs.getInt(1));
+                e.setEventTitle(rs.getString(2));
+                e.setEventDescription(rs.getString(3));
+                e.setStartDate(rs.getString(4));
+                e.setEventTitle(rs.getString(5));
+
+
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return e;
+    }           
 
     
 }

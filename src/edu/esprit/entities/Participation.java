@@ -11,20 +11,31 @@ package edu.esprit.entities;
  */
 public class Participation {
     private int idParticipation;
+    public  String comment;
     private Event event;
+    public Participation(){
+        
+    }
 
-    public Participation(int idParticipation, Event event) {
+    public Participation(int idParticipation,String comment, Event event) {
         this.idParticipation = idParticipation;
+        this.comment=comment;
         this.event = event;
     }
 
-    public Participation(Event event) {
+    public Participation(String comment,Event event) {
+        this.comment=comment;
         this.event = event;
     }
 
     public int getIdParticipation() {
         return idParticipation;
     }
+
+    public String getComment() {
+        return comment;
+    }
+    
 
     public Event getEvent() {
         return event;
@@ -34,8 +45,18 @@ public class Participation {
         this.idParticipation = idParticipation;
     }
 
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    
     public void setEvent(Event event) {
         this.event = event;
+    }
+
+    @Override
+    public String toString() {
+        return "Participation{" + "idParticipation=" + idParticipation + ", comment=" + comment + ", event=" + event + '}';
     }
    
     
