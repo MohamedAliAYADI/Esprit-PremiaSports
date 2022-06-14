@@ -24,8 +24,7 @@ public class NewFXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-       
-        
+      
         try {
             Parent parent = new FXMLLoader().load(getClass().getResource("..//GUI//tableView.fxml"));
             Scene scene = new Scene(parent);
