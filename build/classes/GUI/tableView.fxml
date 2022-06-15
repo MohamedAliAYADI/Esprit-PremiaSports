@@ -18,12 +18,11 @@
    <children>
       <TableView fx:id="studentsTable" layoutX="34.0" layoutY="157.0" prefHeight="265.0" prefWidth="574.0">
         <columns>
-          <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center;" text="ID" />
-          <TableColumn fx:id="nameCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="NAME" />
-            <TableColumn fx:id="birthCol" maxWidth="85.0" prefWidth="85.0" style="-fx-alignment: center;" text="BIRTH DATE" />
-            <TableColumn fx:id="adressCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="ADRESS" />
-            <TableColumn fx:id="emailCol" maxWidth="140.0" prefWidth="140.0" style="-fx-alignment: center;" text="EMAIL" />
-            <TableColumn fx:id="editCol" maxWidth="64.0" prefWidth="64.0" style="-fx-alignment: center;" text="NAME" />
+          <TableColumn fx:id="nameCol" maxWidth="100.0" prefWidth="87.0" style="-fx-alignment: center;" text="TITLE" />
+            <TableColumn fx:id="birthCol" maxWidth="148.0" prefWidth="146.0" style="-fx-alignment: center;" text="DESCRIPTION" />
+            <TableColumn fx:id="adressCol" maxWidth="124.0" prefWidth="109.0" style="-fx-alignment: center;" text="START DATE" />
+            <TableColumn fx:id="emailCol" maxWidth="140.0" prefWidth="117.0" style="-fx-alignment: center;" text="END DATE" />
+            <TableColumn fx:id="editCol" maxWidth="148.0" prefWidth="114.0" style="-fx-alignment: center;" text="NAME" />
         </columns>
       </TableView>
       <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />

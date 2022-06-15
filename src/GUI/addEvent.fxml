@@ -8,12 +8,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextArea?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="371.0" styleClass="btn" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddEventController">
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="450.0" styleClass="btn" stylesheets="@tableview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddEventController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="384.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student Details">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New Event">
                <font>
                   <Font name="Bauhaus 93" size="32.0" />
                </font>
@@ -25,14 +27,14 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="102.13671875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="102.13671875">
                <font>
-                  <Font name="Century Gothic" size="21.0" />
+                  <Font name="Century Gothic" size="15.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="nameFld" prefHeight="25.0" prefWidth="358.0">
+            <JFXTextField fx:id="titleTf" prefHeight="25.0" prefWidth="358.0">
                <font>
-                  <Font name="Century Gothic" size="20.0" />
+                  <Font name="Century Gothic" size="15.0" />
                </font>
             </JFXTextField>
          </children>
@@ -42,12 +44,12 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="64.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birth Date" wrappingWidth="102.13671875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="102.13671875">
                <font>
-                  <Font name="Century Gothic" size="21.0" />
+                  <Font name="Century Gothic" size="15.0" />
                </font>
             </Text>
-            <JFXDatePicker fx:id="birthFld" prefHeight="25.0" prefWidth="281.0" />
+            <TextArea fx:id="descriptionTe" prefHeight="25.0" prefWidth="358.0" />
          </children>
          <VBox.margin>
             <Insets top="17.0" />
@@ -55,16 +57,13 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="89.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" wrappingWidth="102.13671875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date" wrappingWidth="102.13671875">
                <font>
-                  <Font name="Century Gothic" size="21.0" />
+                  <Font name="Century Gothic" size="15.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="adressFld" prefHeight="25.0" prefWidth="358.0">
-               <font>
-                  <Font name="Century Gothic" size="20.0" />
-               </font>
-            </JFXTextField>
+            <JFXDatePicker fx:id="startDateDatePicker" prefHeight="25.0" prefWidth="358.0"/>
+             
          </children>
          <VBox.margin>
             <Insets top="17.0" />
@@ -72,16 +71,13 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="114.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="102.13671875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End Date" wrappingWidth="102.13671875">
                <font>
-                  <Font name="Century Gothic" size="21.0" />
+                  <Font name="Century Gothic" size="15.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="emailFld" prefHeight="25.0" prefWidth="358.0">
-               <font>
-                  <Font name="Century Gothic" size="20.0" />
-               </font>
-            </JFXTextField>
+            <JFXDatePicker fx:id="endDateDatePicker" prefHeight="25.0" prefWidth="358.0"/>
+       
          </children>
          <VBox.margin>
             <Insets top="17.0" />

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -61,8 +63,8 @@ public class EventService {
            
            
            
-           public List<Event> displayEvent(){
-               List<Event> events=new ArrayList<>();
+           public ObservableList<Event> displayEvent(){
+               ObservableList<Event> events=FXCollections.observableArrayList();
                 getAllEventReq="select * from event";
                try {
                    Statement px=mc.cnx.createStatement();

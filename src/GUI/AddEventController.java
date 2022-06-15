@@ -7,11 +7,20 @@ package GUI;
 
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import edu.esprit.entities.Event;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
+import edu.esprit.services.EventService;
+import java.util.Optional;
+import javafx.scene.Node;
+import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
@@ -20,13 +29,13 @@ import javafx.scene.input.MouseEvent;
  */
 public class AddEventController implements Initializable {
      @FXML
-    private JFXTextField nameFld;
+    private JFXTextField titleTf;
     @FXML
-    private JFXDatePicker birthFld;
+    private TextArea descriptionTe;
     @FXML
-    private JFXTextField adressFld;
+    private JFXDatePicker startDateDatePicker;
     @FXML
-    private JFXTextField emailFld;
+    private JFXDatePicker endDateDatePicker;
 
     /**
      * Initializes the controller class.
@@ -38,10 +47,78 @@ public class AddEventController implements Initializable {
 
     @FXML
     private void save(MouseEvent event) {
+
+        
+                if(titleTf.getText().isEmpty()){
+                    Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"Title is empty" , ButtonType.OK);
+                    a.showAndWait();
+                    return;
+                }if(descriptionTe.getText().isEmpty()){
+                     Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"Description is empty" , ButtonType.OK);
+                    a.showAndWait();
+                    return;
+                }if(startDateDatePicker.getValue() == null){
+                     Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"Start Date is empty" , ButtonType.OK);
+                    a.showAndWait();
+                    return;
+                }
+                if(endDateDatePicker.getValue() == null){
+                     Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"End Date is empty" , ButtonType.OK);
+                    a.showAndWait();
+                    return;
+                }
+                                        int res=startDateDatePicker.getValue().compareTo(endDateDatePicker.getValue());
+
+                if(res == 0 ){
+                    Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"Start date is equal to end date" , ButtonType.OK);
+                    a.showAndWait();
+                    return; 
+                }
+                if (res > 0){
+                    Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"End date should be afted start date , Please Verify !!!" , ButtonType.OK);
+                    a.showAndWait();
+                    return; 
+                }
+        EventService es=new EventService();
+        String title=titleTf.getText();
+        String description=descriptionTe.getText();
+        String startDate=startDateDatePicker.getValue().toString();
+        String endDate=endDateDatePicker.getValue().toString();
+        Event e=new Event(title, description, startDate, endDate);
+        es.insertEvent1(e);
+        Alert a=new Alert(Alert.AlertType.CONFIRMATION,"Event Added Succesfully" , ButtonType.OK);
+        Optional<ButtonType> result= a.showAndWait();
+        if(!result.isPresent()){
+            
+        }
+    // alert is exited, no button has been pressed.
+        else if(result.get() == ButtonType.OK){
+                     Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+            
+        }
+     //oke button is pressed
+         else if(result.get() == ButtonType.CANCEL){
+             
+         }
+        
     }
 
     @FXML
     private void clean(MouseEvent event) {
+        titleTf.setText(null);
+        descriptionTe.setText(null);
+        startDateDatePicker.setValue(null);
+        endDateDatePicker.setValue(null);
+        
+    }
+        @FXML
+    private void close(MouseEvent event) {
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
     }
     
-}
+
+    
+
