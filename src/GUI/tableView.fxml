@@ -18,11 +18,12 @@
    <children>
       <TableView fx:id="studentsTable" layoutX="34.0" layoutY="157.0" prefHeight="265.0" prefWidth="574.0">
         <columns>
-          <TableColumn fx:id="nameCol" maxWidth="100.0" prefWidth="87.0" style="-fx-alignment: center;" text="TITLE" />
-            <TableColumn fx:id="birthCol" maxWidth="148.0" prefWidth="146.0" style="-fx-alignment: center;" text="DESCRIPTION" />
-            <TableColumn fx:id="adressCol" maxWidth="124.0" prefWidth="109.0" style="-fx-alignment: center;" text="START DATE" />
-            <TableColumn fx:id="emailCol" maxWidth="140.0" prefWidth="117.0" style="-fx-alignment: center;" text="END DATE" />
-            <TableColumn fx:id="editCol" maxWidth="148.0" prefWidth="114.0" style="-fx-alignment: center;" text="NAME" />
+            <TableColumn fx:id="idCol" maxWidth="70.0" prefWidth="49.0" style="-fx-alignment: center;" text="ID" />
+          <TableColumn fx:id="nameCol" maxWidth="108.0" prefWidth="82.0" style="-fx-alignment: center;" text="TITLE" />
+            <TableColumn fx:id="birthCol" maxWidth="190.0" prefWidth="151.0" style="-fx-alignment: center;" text="DESCRIPTION" />
+            <TableColumn fx:id="adressCol" maxWidth="130.0" prefWidth="89.0" style="-fx-alignment: center;" text="START DATE" />
+            <TableColumn fx:id="emailCol" maxWidth="163.0" prefWidth="89.0" style="-fx-alignment: center;" text="END DATE" />
+            <TableColumn fx:id="editCol" maxWidth="193.0" prefWidth="109.0" style="-fx-alignment: center;" text="NAME" />
         </columns>
       </TableView>
       <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
@@ -38,7 +39,7 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="34.0" layoutY="73.0" prefHeight="76.0" prefWidth="200.0">
          <children>
-            <FontAwesomeIconView fill="#2196f3" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn">
+            <FontAwesomeIconView fill="#2196f3" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn" text="">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>

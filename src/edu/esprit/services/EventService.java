@@ -71,10 +71,12 @@ public class EventService {
                    ResultSet rs= px.executeQuery(getAllEventReq);
                    while(rs.next()){
                        Event ev=new Event();
+                       ev.setEventId(rs.getInt("id"));
                        ev.setEventTitle(rs.getString("title"));
                        ev.setEventDescription(rs.getString("description"));
                        ev.setStartDate(rs.getString("startDate"));
                        ev.setEndDate(rs.getString("endDate"));
+                       
                        
                        events.add(ev);
                    }

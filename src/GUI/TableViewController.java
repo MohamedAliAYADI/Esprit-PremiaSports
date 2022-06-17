@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import edu.esprit.entities.Event;
 import edu.esprit.services.EventService;
 import java.io.IOException;
@@ -17,15 +19,19 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -46,7 +52,10 @@ public class TableViewController implements Initializable {
     private TableColumn<Event, String> emailCol;
     ObservableList<Event>  StudentList = FXCollections.observableArrayList();
     @FXML
-    private TableColumn<?, ?> editCol;
+    private TableColumn<Event, String> editCol;
+    Event ev=null;
+    @FXML
+    private TableColumn<Event, String> idCol;
 
 
 
@@ -58,6 +67,10 @@ public class TableViewController implements Initializable {
         loadDate();
         // TODO
     }    
+             @FXML
+    private void print(MouseEvent event) {
+    
+    }
 
     @FXML
     private void close(MouseEvent event) {
@@ -75,7 +88,7 @@ public class TableViewController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(tableView.TableViewController.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }
 
@@ -90,19 +103,60 @@ public class TableViewController implements Initializable {
        private void loadDate() {
         
         refreshTable();
-        
+        idCol.setCellValueFactory(new PropertyValueFactory<>("eventId"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("eventTitle"));
         birthCol.setCellValueFactory(new PropertyValueFactory<>("eventDescription"));
         adressCol.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         emailCol.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-       }
+         Callback<TableColumn<Event, String>, TableCell<Event, String>> cellFoctory = (TableColumn<Event, String> param) -> {
+              final TableCell<Event ,String > cell=new  TableCell<Event,String>(){
+                  @Override
+                  protected void updateItem(String item, boolean empty) {
+                      super.updateItem(item, empty); //To change body of generated methods, choose Tools | Templates.
+                           if (empty) {
+                        setGraphic(null);
+                        setText(null);
 
-    @FXML
-    private void print(MouseEvent event) {
-    }
-    
+                    }else {
 
+                        FontAwesomeIconView deleteIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
+                        FontAwesomeIconView editIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
 
+                        deleteIcon.setStyle(
+                                " -fx-cursor: hand ;"
+                                + "-glyph-size:28px;"
+                                + "-fx-fill:#ff1744;"
+                        );
+                        editIcon.setStyle(
+                                " -fx-cursor: hand ;"
+                                + "-glyph-size:28px;"
+                                + "-fx-fill:#00E676;"
+                        );
+                 deleteIcon.setOnMouseClicked((MouseEvent event) -> {
+                     ev=studentsTable.getSelectionModel().getSelectedItem();
+                     EventService es=new EventService();
+                     es.deleteEvent(ev);
+                     refreshTable();
+                 });
+                        HBox managebtn = new HBox(editIcon, deleteIcon);
+                        managebtn.setStyle("-fx-alignment:center");
+                        HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
+                        HBox.setMargin(editIcon, new Insets(2, 3, 0, 2));
 
-    
+                        setGraphic(managebtn);
+
+                        setText(null);
+                  }
+                 
+                 
+                  
+              }
+         
+       };
+                 return cell;
+     };
+                  editCol.setCellFactory(cellFoctory);
+
 }
+}
+ 
