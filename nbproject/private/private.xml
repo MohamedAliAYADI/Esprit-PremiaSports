@@ -3,7 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nemya/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/utils/Connexion.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/Default/EspritPremiaSports.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/gui/ReservationA.fxml</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/services/PromotionServices.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/services/Reservationservices.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/gui/ReservationUserController.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/gui/ReservationAController.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/entities/Reservation.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/gui/ReservationUser.fxml</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/edu/esprit/utils/MyConnection.java</file>
+            <file>file:/C:/Users/bouss/OneDrive/Documents/NetBeansProjects/Esprit-PremiaSports/src/Default/NewFXMain.java</file>
         </group>
     </open-files>
 </project-private>

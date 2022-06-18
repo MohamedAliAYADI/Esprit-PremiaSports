@@ -15,20 +15,38 @@ package edu.esprit.entities;
  * @author bouss
  */
 public class Reservation {
-
-    private int idClient;
-    //club
-    //terrain
     private int idReservation;
     private String DateReservation;
     private int nombredeParticipant;
     private int prix;
-    private int prom;
+    private Promotion prom;
 
     public Reservation() {
     }
 
-    public Reservation(String DateReservation, int nombredeParticipant, int prix, int prom) {
+    public Reservation(int idReservation, String DateReservation, int nombredeParticipant, int prix, Promotion prom) {
+        this.idReservation = idReservation;
+        this.DateReservation = DateReservation;
+        this.nombredeParticipant = nombredeParticipant;
+        this.prix = prix;
+        this.prom = prom;
+    }
+
+    public Reservation(int idReservation) {
+        this.idReservation = idReservation;
+    }
+
+    public Reservation(int idReservation, String DateReservation, int nombredeParticipant, int prix) {
+        this.idReservation = idReservation;
+        this.DateReservation = DateReservation;
+        this.nombredeParticipant = nombredeParticipant;
+        this.prix = prix;
+    }
+
+     
+
+    
+    public Reservation(String DateReservation, int nombredeParticipant, int prix, Promotion prom) {
 
         this.DateReservation = DateReservation;
         this.nombredeParticipant = nombredeParticipant;
@@ -44,21 +62,14 @@ public class Reservation {
     }
     
 
-    public int getProm() {
+    public Promotion getProm() {
         return prom;
     }
 
-    public void setProm(int prom) {
+    public void setProm(Promotion prom) {
         this.prom = prom;
     }
 
-    public void setIdClient(int idClient) {
-        this.idClient = idClient;
-    }
-
-    public int getIdClient() {
-        return idClient;
-    }
 
     public int getIdReservation() {
         return idReservation;

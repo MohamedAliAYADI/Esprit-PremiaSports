@@ -14,20 +14,20 @@ public class Promotion {
 
     public int idPromotion;
     private String type;
-    private int promo;
+    private Float promo;
     
 
     public Promotion() {
         
     }
 
-    public Promotion(String type,int promo) {
+    public Promotion(String type,Float promo) {
         this.type = type;
         this.promo=promo;
     }
     
 
-    public Promotion(int idPromotion, String type,int promo) {
+    public Promotion(int idPromotion, String type,Float promo) {
         this.idPromotion = idPromotion;
         this.type = type;
         this.promo=promo;
@@ -41,7 +41,7 @@ public class Promotion {
         return type;
     }
 
-    public int getPromo() {
+    public double getPromo() {
         return promo;
     }
     
@@ -54,7 +54,7 @@ public class Promotion {
         this.type = type;
     }
 
-    public void setPromo(int promo) {
+    public void setPromo(Float promo) {
         this.promo = promo;
     }
 

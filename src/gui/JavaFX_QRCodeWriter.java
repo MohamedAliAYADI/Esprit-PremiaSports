@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.esprit.services;
+package gui;
 
 /**
  *
- * @author Geekz
+ * @author bouss
  */
-public class EventService {
+class JavaFX_QRCodeWriter {
     
 }

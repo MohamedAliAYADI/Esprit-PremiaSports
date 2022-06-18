@@ -23,7 +23,7 @@ public class MyConnection {
     public static Connection cnx;
     
     static MyConnection instance=null;
-   private MyConnection() {
+   public MyConnection() {
         
         try {
            cnx=DriverManager.getConnection(url, login, pwd);
