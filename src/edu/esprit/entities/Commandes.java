@@ -8,8 +8,7 @@ package edu.esprit.entities;
 import java.util.Date;
 
 /**
- *
- * @author user
+
  */
 public class Commandes {
 

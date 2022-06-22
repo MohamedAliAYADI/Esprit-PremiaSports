@@ -8,11 +8,10 @@
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/SupCatgController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/Update_ProductController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/CategorieService.java</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/Crud_Comment.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/Crud_Promotion.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/HomeController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Commandes.java</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Categorie.java</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/CrudProduit.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Panier.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/Default/MainFX.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Promotion.java</file>
@@ -45,7 +44,6 @@
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Categories.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/Default/EspritPremiaSports.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/panierList.fxml</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Comment.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/utils/SMS.java</file>
         </group>
     </open-files>
