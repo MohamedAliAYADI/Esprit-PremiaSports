@@ -23,75 +23,63 @@ public class ProduitService {
 
     Connection cnx = MyConnection.getInstance().cnx;
     CategorieService cs = new CategorieService();
-    
+
 //***************1) ISERT PRODUIT ****************
     public void insertProduits(Produits p) {
 
         try {
-            String req = "INSERT INTO `Product`( `nom_prod`, `Image_prod`, `prix`, `id_Catg`) VALUES (?,?,?,?)";
+            String req = "INSERT INTO `produits`(`nom_prod`, `Image_prod`,`prix`) VALUES (?,?,?)";
 
             PreparedStatement ps = cnx.prepareStatement(req);
 
             ps.setString(1, p.getNom_prod());
 
             ps.setString(2, p.getImage_prod());
-
-            ps.setInt(3, p.getPrixprod());
-
-            ps.setInt(4, p.getCategories().getId_catg());
-
+            ps.setString(3, p.getPrix());
             ps.executeUpdate();
+            System.out.println("PRD ajouté !");
 
-            System.out.println("Produits "
-                    + p.getNom_prod() + "cat " + p.getCategories().getNom_cat()
-                    + " Produit ajouté avec succé  ");
-
+            // ps.setInt(3, p.getPrixprod());
+            //ps.setInt(4, p.getCategories().getId_catg());
+            //System.out.println("Produits "
+            //  + p.getNom_prod() + "cat " + p.getCategories().getNom_cat()
+            //  + " Produit ajouté avec succé  ");
         } catch (SQLException ex) {
             Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-    //I have a pb with 
-//*****************2) Select*************************
 
-    public List<Produits> fetchProducts() {
-        
-        List<Produits> prd = new ArrayList<>();
+//*****************2) Select*************************
+    public List<Produits> selectall() {
+
+        List<Produits> l = new ArrayList<Produits>();
 
         try {
-
             String req = "SELECT * FROM `produits`";
-
             PreparedStatement ps = cnx.prepareStatement(req);
-            ResultSet rs = ps.executeQuery();
+            ResultSet result = ps.executeQuery();
 
-            while (rs.next()) {
+            while (result.next()) {
+                int id_prod = result.getInt(1);
+                String nom_prod = result.getString(2);
+                String Image_prod = result.getString(3);
+                String prix = result.getString(4);
 
-                Produits p = new Produits();
-                p.setId_prod(rs.getInt(1));
-                p.setNom_prod(rs.getString("name_product"));
-                p.setNom_prod(rs.getString(3));
-                p.setCategories(cs.getCategoryByID(rs.getInt(5)));
-
-                prd.add(p);
+                l.add(new Produits(id_prod, nom_prod, Image_prod, prix));
 
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategorieService.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return prd;
+        return l;
+
     }
 
-    
-    
-    
-    
     //3)GET BY ID 
     //********************GETBYID**************PRODUIT ***************
-    
-    
     public Produits getProduitByID(Produits p1) {
 
         try {
@@ -113,7 +101,7 @@ public class ProduitService {
 
     }
 
-  //4) DELETE 
+    //4) DELETE 
     //*******************DELET PRODUIT **************************************
     public Produits DeleteProduits(Produits c) {
         try {
@@ -136,20 +124,19 @@ public class ProduitService {
         return c;
     }
 
-    
-    
-    
-   // **************************UPDATE PRODUIT  *******************
-    
+    // **************************UPDATE PRODUIT  *******************
     public void updateProduit(Produits p) {
 
         try {
 
-            String req = "UPDATE `produits` SET `nom_prod` = ?  WHERE `id_prod` = ?";
+            String req = "UPDATE `produits`" + " SET `nom_prod`=?, `Image_prod`=? ,`prix`=?" + " WHERE id_prod=?";
 
             PreparedStatement statement = cnx.prepareStatement(req);
             statement.setString(1, p.getNom_prod());
-            statement.setInt(2, p.getId_prod());
+            statement.setString(2, p.getImage_prod());
+            statement.setString(3, p.getPrix());
+            statement.setInt(4, p.getId_prod());
+
             statement.executeUpdate();
 
             System.out.println("Produit est mise à jour avec succé");
@@ -159,6 +146,7 @@ public class ProduitService {
 
     }
 //*********************SELECT ALL PRODUIT **************************
+
     public Produits selectAllaProduits() {
 
         Produits p2 = new Produits();
@@ -186,4 +174,5 @@ public class ProduitService {
 
     }
 
+    // *******************
 }

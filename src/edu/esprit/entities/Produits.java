@@ -18,47 +18,36 @@ public class Produits {
     private  String nom_prod ;
     
     private String Image_prod;
-      private  int prixprod ;
+      private  String prix ;
 
-    private Categories categories;
-    
-   private Date DateAjoutProd ;
+    public Produits(String nom_prod, String Image_prod, String prix) {
+        this.nom_prod = nom_prod;
+        this.Image_prod = Image_prod;
+        this.prix = prix;
+    }
 
     public Produits() {
     }
 
-    public Produits(String nom_prod, String Image_prod, int prixprod, Categories categories) {
-        this.nom_prod = nom_prod;
-        this.Image_prod = Image_prod;
-        this.prixprod = prixprod;
-        this.categories = categories;
-    }
-
-    
-
-        public Produits(String nom_prod, String Image_prod, int prixprod) {
-        this.nom_prod = nom_prod;
-        this.Image_prod = Image_prod;
-        this.prixprod = prixprod;
-    }
-
-    public Produits(int id_prod, String nom_prod) {
+    public Produits(int id_prod, String nom_prod, String Image_prod, String prix) {
         this.id_prod = id_prod;
         this.nom_prod = nom_prod;
-    }
-    
-    public Produits(String nom_prod, String Image_prod) {
-        this.nom_prod = nom_prod;
         this.Image_prod = Image_prod;
+        this.prix = prix;
     }
 
-    public Produits(String nom_prod, String Image_prod, int prixprod, Categories categories, Date DateAjoutProd) {
+    public Produits(String nom_prod, String prix) {
         this.nom_prod = nom_prod;
-        this.Image_prod = Image_prod;
-        this.prixprod = prixprod;
-        this.categories = categories;
-        this.DateAjoutProd = DateAjoutProd;
+        this.prix = prix;
     }
+
+    public Produits(int id_prod, String nom_prod, String prix) {
+        this.id_prod = id_prod;
+        this.nom_prod = nom_prod;
+        this.prix = prix;
+    }
+
+
 
     public int getId_prod() {
         return id_prod;
@@ -84,32 +73,16 @@ public class Produits {
         this.Image_prod = Image_prod;
     }
 
-    public int getPrixprod() {
-        return prixprod;
+    public String getPrix() {
+        return prix;
     }
 
-    public void setPrixprod(int prixprod) {
-        this.prixprod = prixprod;
-    }
-
-    public Categories getCategories() {
-        return categories;
-    }
-
-    public void setCategories(Categories categories) {
-        this.categories = categories;
-    }
-
-    public Date getDateAjoutProd() {
-        return DateAjoutProd;
-    }
-
-    public void setDateAjoutProd(Date DateAjoutProd) {
-        this.DateAjoutProd = DateAjoutProd;
+    public void setPrix(String prix) {
+        this.prix = prix;
     }
 
     @Override
     public String toString() {
-        return "produits{" + "id_prod=" + id_prod + ", nom_prod=" + nom_prod + ", Image_prod=" + Image_prod + ", prixprod=" + prixprod + ", categories=" + categories + ", DateAjoutProd=" + DateAjoutProd + '}';
+        return "Produits{" + "id_prod=" + id_prod + ", nom_prod=" + nom_prod + ", Image_prod=" + Image_prod + ", prix=" + prix + '}';
     }
 }

@@ -8,13 +8,14 @@ import edu.esprit.services.CategorieService;
 import edu.esprit.services.CommandeService;
 import edu.esprit.services.ProduitService;
 import edu.esprit.utils.MyConnection;
+import java.sql.SQLException;
 
 /**
  *
  * @author Geekz
  */public class EspritPremiaSports {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // app connex done 
         
    MyConnection.getInstance();
@@ -30,10 +31,10 @@ import edu.esprit.utils.MyConnection;
  
     
  //2) UPDATE CATEGORIES done
-      //CategorieService gs = new CategorieService();
-        //Categories c = new Categories(225,"RAQUETTE2222222");
-        //gs.updatecat(c);
-      
+     CategorieService gs = new CategorieService();
+     Categories c = new Categories ( 384,"kqhfqklhfsk","dsgds");
+     
+     gs.Update(c);
         
 
      
@@ -63,9 +64,11 @@ import edu.esprit.utils.MyConnection;
   //5) SELECT ALL * DONE 
   
   //CategorieService gs2 = new CategorieService();
-        //Categories c2 = new Categories(5,"TEST");
-       //gs2.selectall();
-       
+        
+        //Categories c12 = new Categories();
+     
+     
+       // System.out.print( gs2.selectall().set(2, c12.getType()));
        
        
        
@@ -107,39 +110,39 @@ import edu.esprit.utils.MyConnection;
        
          //********PRODUITS******************
          
-         // 1) INSERT DANS Produit
+         //1) INSERT DANS Produit
 //ProduitService prd = new ProduitService ();
-//Produits prod = new Produits ("Ballon","bel.jpg", 65);
+//Produits prod = new Produits ("TEST","TEST");
 //prd.insertProduits(prod);
 
-  
-//OU BIEN  ********************
+  //OU BIEN  ********************
 
         //SERVICES *************************
         
-        //CategorieService cs = new CategorieService();
+       // CategorieService cs = new CategorieService();
         //ProduitService ps = new ProduitService();
         
         //instanciate *****************************
-        //Categories c = new Categories ("Tennis","TEST2");
+       // Categories c = new Categories ("Tennis","TEST2");
          //cs.insertCategories (c);
         //Produits pp= new Produits ("Ballon","bel.jpg", 65, c);
                //INSERT PRODUIT add Produit ***************************************
-        //ps.insertProduits(pp);
+       // ps.insertProduits(pp);
  
 
 
 
  //2) UPDATE PRODUITS done
-      //ProduitService prd1 = new ProduitService ();
-        //Produits prod1 = new Produits (1,"BallonOR  ");
-        //prd1.updateProduit(prod1);
+       ProduitService gss = new ProduitService();
+     Produits c1 = new Produits ( 106,"kqhfqklhfsk","dsgds", "hkj");
+     
+     gss.updateProduit(c1);
         
            //3) DELETE PRODUITS done
-  //ProduitService prdd = new ProduitService();
-  //Produits pdrsup = new Produits (225,"RAQUETTE2222222");
+// ProduitService prdd = new ProduitService();
+//Produits pdrsup = new Produits (1,"RAQUETTE2222222");
 
-        //prdd.DeleteProduits(pdrsup);
+    // prdd.DeleteProduits(pdrsup);
         
         
              //4) GET BY ID DONE 
@@ -155,8 +158,15 @@ import edu.esprit.utils.MyConnection;
             //5) SELECT ALL * DONE 
   
   //ProduitService prd3 = new ProduitService();
-        //Produits pr = new Produits (5,"ok");
-      //prd3.selectAllaProduits();
+      // Produits pr = new Produits (5,"ok");
+     //prd3.selectAllaProduits();
+      
+      
+      
+      
+    // ProduitService prd5 = new ProduitService ();
+//Produits prdddd = new Produits ("FOOTBALL","TEST");
+//prd5.insertProduitss(prdddd);
         
     }
     
