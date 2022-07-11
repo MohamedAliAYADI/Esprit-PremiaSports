@@ -26,7 +26,7 @@ public class NewFXMain extends Application {
     public void start(Stage primaryStage) {
       
         try {
-            Parent parent = new FXMLLoader().load(getClass().getResource("..//GUI//tableView.fxml"));
+            Parent parent = new FXMLLoader().load(getClass().getResource("..//GUI//tableview.fxml"));
             Scene scene = new Scene(parent);
             scene.setFill(Color.TRANSPARENT);
             primaryStage.setScene(scene);

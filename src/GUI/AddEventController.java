@@ -17,6 +17,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import edu.esprit.services.EventService;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import javafx.scene.Node;
 import javafx.stage.Stage;
@@ -28,7 +30,8 @@ import javafx.stage.Stage;
  * @author nemya
  */
 public class AddEventController implements Initializable {
-     @FXML
+    
+    @FXML
     private JFXTextField titleTf;
     @FXML
     private TextArea descriptionTe;
@@ -36,6 +39,13 @@ public class AddEventController implements Initializable {
     private JFXDatePicker startDateDatePicker;
     @FXML
     private JFXDatePicker endDateDatePicker;
+    
+    public static boolean update;
+    int id;
+    
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-d");
+
+
 
     /**
      * Initializes the controller class.
@@ -78,7 +88,8 @@ public class AddEventController implements Initializable {
                     Alert a=new Alert(Alert.AlertType.INFORMATION.ERROR,"End date should be afted start date , Please Verify !!!" , ButtonType.OK);
                     a.showAndWait();
                     return; 
-                }
+                }else if(update ==true){
+                    System.out.println("add service");
         EventService es=new EventService();
         String title=titleTf.getText();
         String description=descriptionTe.getText();
@@ -100,8 +111,29 @@ public class AddEventController implements Initializable {
      //oke button is pressed
          else if(result.get() == ButtonType.CANCEL){
              
-         }
+         }                  
+                }else if (update==false){
+                            EventService es=new EventService();
+
+                        String title=titleTf.getText();
+        String description=descriptionTe.getText();
+        String startDate=startDateDatePicker.getValue().toString();
+        String endDate=endDateDatePicker.getValue().toString();
+                Event e=new Event(id,title, description, startDate, endDate);
+
+          es.modifyEvent(e);
+              Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+                }
+  
         
+    }
+        void setTextField(int id, String  title, String desc, String startDate, String endDate) {
+            this.id=id;
+        titleTf.setText(title);
+        descriptionTe.setText(desc);
+        startDateDatePicker.setValue(LocalDate.parse(startDate, formatter));
+        endDateDatePicker.setValue(LocalDate.parse(endDate, formatter));
     }
 
     @FXML
@@ -116,6 +148,10 @@ public class AddEventController implements Initializable {
     private void close(MouseEvent event) {
             Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    void setUpdate(boolean b) {
+      this.update=b;   
     }
     }
     

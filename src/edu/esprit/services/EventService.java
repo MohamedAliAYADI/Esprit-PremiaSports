@@ -85,9 +85,8 @@ public class EventService {
                }
                 return events;
            }
-           public void modifyEvent(Event e,String newDate){
-               updateEvent="update event set endDate='"
-                       +newDate+ "' where id="
+           public void modifyEvent(Event e){
+               updateEvent="update event set title='"+e.getEventTitle()+ "' where id="
                       + e.getEventId() + "";
                    Statement st;
                try {

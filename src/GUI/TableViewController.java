@@ -59,6 +59,7 @@ public class TableViewController implements Initializable {
 
 
 
+
     /**
      * Initializes the controller class.
      */
@@ -80,6 +81,7 @@ public class TableViewController implements Initializable {
 
     @FXML
     private void getAddView(MouseEvent event) {
+        AddEventController.update=true;
                 try {
             Parent parent = FXMLLoader.load(getClass().getResource("..//GUI//addEvent.fxml"));
             Scene scene = new Scene(parent);
@@ -138,6 +140,27 @@ public class TableViewController implements Initializable {
                      es.deleteEvent(ev);
                      refreshTable();
                  });
+                 editIcon.setOnMouseClicked((MouseEvent event) -> {
+                     AddEventController.update=false;
+                     ev=studentsTable.getSelectionModel().getSelectedItem();
+                     FXMLLoader loader = new FXMLLoader ();
+                     loader.setLocation(getClass().getResource("/GUI/addEvent.fxml"));
+                              try {
+                                loader.load();
+                            } catch (IOException ex) {
+                                Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                              AddEventController addEventController=loader.getController();
+                              addEventController.setTextField(ev.getEventId(),ev.getEventTitle(), ev.getEventDescription(), ev.getStartDate(), ev.getEndDate());
+                            Parent parent = loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(parent));
+                            stage.initStyle(StageStyle.UTILITY);
+                            stage.show();
+
+
+                     
+                 });
                         HBox managebtn = new HBox(editIcon, deleteIcon);
                         managebtn.setStyle("-fx-alignment:center");
                         HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
@@ -156,6 +179,8 @@ public class TableViewController implements Initializable {
                  return cell;
      };
                   editCol.setCellFactory(cellFoctory);
+                           studentsTable.setItems(StudentList);
+
 
 }
 }
