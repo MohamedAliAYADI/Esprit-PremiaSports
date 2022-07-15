@@ -30,13 +30,11 @@ public class ReclamationController implements Initializable {
     @FXML
     private Button RecJardinier;
     @FXML
-    private Button RecEntreprise;
-    @FXML
-    private Button RecAgriculteur;
-    @FXML
     private Button ConsultProfilebtn;
     @FXML
-    private Text deco;
+    private Button RecJardinier1;
+    @FXML
+    private Button ConsultProfilebtn1;
 
     /**
      * Initializes the controller class.
@@ -47,19 +45,9 @@ public class ReclamationController implements Initializable {
     }    
 
 
-    @FXML
-    private void ReclamerEntreprise(ActionEvent event) {
-    }
-
-    @FXML
-    private void ReclamerAcriculteur(ActionEvent event) {
-    }
 
 
 
-    @FXML
-    private void deco(MouseEvent event) {
-    }
 
     @FXML
     private void gobacktohome(ActionEvent event) throws IOException {
@@ -73,6 +61,32 @@ public class ReclamationController implements Initializable {
     @FXML
     private void gotoajouterReclamation(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AjouterReclamation.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void ReclamationDisplay(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void Gotosuvireclamation(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("StatuReclamation.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void deletereclamation(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SupReclamation.fxml"));
         Scene scene = new Scene(root);
         Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
         stage.setScene(scene);

@@ -20,21 +20,16 @@
       </Label>
       <TableView fx:id="table" layoutX="52.0" layoutY="82.0" prefHeight="320.0" prefWidth="227.0">
          <columns>
-            <TableColumn fx:id="id_catg" prefWidth="75.0" text="id" />
-            <TableColumn fx:id="type" prefWidth="75.0" text="Type" />
-            <TableColumn fx:id="nom_cat" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="id_catg" minWidth="0.0" prefWidth="0.0" text="id" />
+            <TableColumn fx:id="type" prefWidth="115.19997787475586" text="Type" />
+            <TableColumn fx:id="nom_cat" prefWidth="110.40003967285156" text="Nom" />
          </columns>
       </TableView>
       <Button layoutX="84.0" layoutY="423.0" mnemonicParsing="false" onAction="#selectdelet" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="Selectionner " />
       <Button layoutX="84.0" layoutY="470.0" mnemonicParsing="false" onAction="#returnn" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="retour" />
-      <TextField fx:id="id_cat" disable="true" layoutX="364.0" layoutY="269.0" prefHeight="32.0" prefWidth="163.0" />
+      <TextField fx:id="id_cat" disable="true" layoutX="470.0" layoutY="470.0" prefHeight="11.0" prefWidth="112.0" />
       <TextField fx:id="txttype" disable="true" layoutX="364.0" layoutY="311.0" prefHeight="35.0" prefWidth="163.0" />
       <TextField fx:id="txtname" disable="true" layoutX="364.0" layoutY="367.0" prefHeight="35.0" prefWidth="163.0" />
-      <Text layoutX="299.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="64.65972900390625">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
       <Text layoutX="293.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
          <font>
             <Font size="24.0" />
@@ -45,7 +40,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="464.0" layoutY="449.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: red;" text="Supprimer" textFill="#f4ecec">
+      <Button layoutX="446.0" layoutY="462.0" mnemonicParsing="false" onAction="#delete" prefHeight="42.0" prefWidth="177.0" style="-fx-background-color: red;" text="Supprimer" textFill="#f4ecec">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

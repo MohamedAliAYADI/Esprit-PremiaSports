@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="354.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLDocumentsPageController">
+<AnchorPane id="AnchorPane" prefHeight="603.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLDocumentsPageController">
    <children>
-      <AnchorPane layoutX="35.0" layoutY="-81.0" prefHeight="402.0" prefWidth="434.0" styleClass="left-pane">
+      <AnchorPane layoutX="10.0" layoutY="56.0" prefHeight="383.0" prefWidth="262.0" style="-fx-background-color: #0000FF;" styleClass="left-pane">
          <children>
-            <VBox layoutX="75.0" layoutY="195.0" spacing="20.0" AnchorPane.leftAnchor="75.0">
+            <VBox layoutX="75.0" layoutY="195.0" spacing="20.0" AnchorPane.leftAnchor="75.0" />
+            <Button alignment="CENTER" layoutX="-1.0" mnemonicParsing="false" onAction="#Categoriesds" prefHeight="50.0" prefWidth="274.0" style="-fx-background-color: #1E90FF;" text="Categories" />
+            <Button alignment="CENTER" layoutX="-1.0" layoutY="195.0" mnemonicParsing="false" onAction="#gotodispolayprod" prefHeight="50.0" prefWidth="274.0" style="-fx-background-color: #1E90FF;" text="Produits" />
+            <Button alignment="CENTER" layoutX="-1.0" layoutY="93.0" mnemonicParsing="false" onAction="#gotoreclamation" prefHeight="58.0" prefWidth="274.0" style="-fx-background-color: #1E90FF;" text="Reclamation Client " />
+            <Button alignment="CENTER" layoutX="-1.0" layoutY="276.0" mnemonicParsing="false" onAction="#CommandePagedisplay" prefHeight="50.0" prefWidth="274.0" style="-fx-background-color: #1E90FF;" text="Commandes Client" />
+            <Button alignment="CENTER" layoutX="1.0" layoutY="357.0" mnemonicParsing="false" onAction="#retour" prefHeight="42.0" prefWidth="274.0" style="-fx-background-color: #1E90FF;" text="Profil" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="-5.0" prefHeight="50.0" prefWidth="762.0" style="-fx-background-color: #87CEFA;">
+         <children>
+            <HBox layoutY="-7.0" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;">
                <children>
-                  <Button alignment="CENTER" layoutX="57.0" layoutY="123.0" mnemonicParsing="false" onAction="#Categoriesds" prefHeight="30.0" prefWidth="250.0" text="Categories" />
-                  <Button alignment="CENTER" layoutX="152.0" layoutY="87.0" mnemonicParsing="false" onAction="#gotodispolayprod" prefHeight="30.0" prefWidth="250.0" text="Produits" />
-                  <Button alignment="CENTER" layoutX="132.0" layoutY="185.0" mnemonicParsing="false" onAction="#CommandePagedisplay" prefHeight="30.0" prefWidth="250.0" text="Commandes" />
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#retour" prefHeight="30.0" prefWidth="250.0" text="retour" />
+                  <Label prefHeight="26.0" prefWidth="165.0" text="PremiaSports" textFill="WHITE">
+                     <font>
+                        <Font name="Yu Gothic Medium" size="21.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
                </children>
-            </VBox>
+            </HBox>
          </children>
       </AnchorPane>
    </children>

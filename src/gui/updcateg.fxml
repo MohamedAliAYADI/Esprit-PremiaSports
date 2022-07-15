@@ -15,22 +15,17 @@
    <children>
       <TableView fx:id="table" layoutX="37.0" layoutY="116.0" prefHeight="320.0" prefWidth="227.0">
          <columns>
-            <TableColumn fx:id="id_catg" prefWidth="75.0" text="id" />
-            <TableColumn fx:id="type" prefWidth="75.0" text="Type" />
-            <TableColumn fx:id="nom_cat" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="id_catg" minWidth="0.0" prefWidth="48.799983978271484" text="id" />
+            <TableColumn fx:id="type" minWidth="3.999969482421875" prefWidth="59.20001220703125" text="Type" />
+            <TableColumn fx:id="nom_cat" minWidth="0.0" prefWidth="118.40003967285156" text="Nom" />
          </columns>
       </TableView>
       <Button layoutX="194.0" layoutY="460.0" mnemonicParsing="false" onAction="#actUpdate" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="Selectionner " textFill="#e7e1e1" />
       <Button layoutX="358.0" layoutY="460.0" mnemonicParsing="false" onAction="#modif" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #1E90FF;" text="Modifier" textFill="#f7f5f5" />
-      <TextField fx:id="id_cat" disable="true" layoutX="487.0" layoutY="180.0" prefHeight="32.0" prefWidth="163.0" />
+      <TextField fx:id="id_cat" disable="true" layoutY="457.0" prefHeight="32.0" prefWidth="163.0" />
       <TextField fx:id="txttype" layoutX="487.0" layoutY="236.0" prefHeight="35.0" prefWidth="163.0" />
       <TextField fx:id="txtname" layoutX="487.0" layoutY="291.0" prefHeight="35.0" prefWidth="163.0" />
-      <Button layoutX="21.0" layoutY="460.0" mnemonicParsing="false" onAction="#returnn" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="retour" textFill="#faf2f2" />
-      <Text layoutX="413.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="64.65972900390625">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
+      <Button layoutX="6.0" layoutY="460.0" mnemonicParsing="false" onAction="#returnn" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="retour" textFill="#faf2f2" />
       <Text layoutX="403.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
          <font>
             <Font size="24.0" />
@@ -41,7 +36,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label layoutX="45.0" layoutY="72.0" prefHeight="35.0" prefWidth="223.0" text="Modifier  Categories" textFill="#b422a8">
+      <Label layoutX="45.0" layoutY="72.0" prefHeight="35.0" prefWidth="223.0" text="Modifier  Categories" textFill="#225cb2">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

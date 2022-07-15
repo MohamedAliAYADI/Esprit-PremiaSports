@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ClientReclamationController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="table" layoutX="30.0" layoutY="178.0" prefHeight="194.0" prefWidth="451.0">
+               <columns>
+                  <TableColumn fx:id="id" minWidth="0.0" prefWidth="47.999996185302734" text="Clients" />
+                  <TableColumn fx:id="sujet" minWidth="0.0" prefWidth="79.19998168945312" text="Sujet" />
+                  <TableColumn fx:id="description" minWidth="0.0" prefWidth="233.6000518798828" text="Description" />
+                  <TableColumn fx:id="statut" minWidth="0.0" prefWidth="90.40000915527344" text="Statut" />
+               </columns>
+            </TableView>
+            <AnchorPane layoutX="-78.0" layoutY="12.0" prefHeight="43.0" prefWidth="615.0" style="-fx-background-color: #87CEFA;">
+               <children>
+                  <HBox layoutX="86.0" layoutY="-4.0" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="165.0" text="PremiaSports" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Medium" size="21.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <Button fx:id="RecEntreprise" layoutX="53.0" layoutY="102.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="252.0" style="-fx-background-color: #1E90FF;" text="Reclamation Client" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="481.0" layoutY="89.0" prefHeight="35.0" prefWidth="223.0" text="Menu" textFill="#225eb2">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnDelete" layoutX="516.0" layoutY="207.0" mnemonicParsing="false" onAction="#Delete" prefHeight="26.0" prefWidth="153.0" style="-fx-background-color: #1E90FF;" text="Supprimer Reclamation" textFill="#e7d8d8" />
+            <Button layoutX="515.0" layoutY="265.0" mnemonicParsing="false" onAction="#goback" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #1E90FF;" text="Profil" textFill="#faf2f2" />
+            <Button layoutX="515.0" layoutY="150.0" mnemonicParsing="false" onAction="#UpdateStatut" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #1E90FF;" text="Traiter Reclamation" textFill="#f2e9e9" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

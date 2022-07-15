@@ -43,8 +43,7 @@ public class SupProduitController implements Initializable {
     private TableColumn<Produits, Integer> id_prod;
     @FXML
     private TableColumn<Produits, String> nom_prod;
-    @FXML
-    private TableColumn<Produits, String> Image_prod;
+    
     @FXML
     private TableColumn<Produits, String> prix;
     @FXML
@@ -58,15 +57,27 @@ public class SupProduitController implements Initializable {
     @FXML
     private Button btnCancel;
 ProduitService p = new ProduitService ();
+    @FXML
+    private TableColumn<Produits, String> reference_prod;
+    @FXML
+    private TableColumn<Produits, String> description;
+    @FXML
+    private TableColumn<Produits, String> quantite;
+    @FXML
+    private TextField txtReference;
+    @FXML
+    private TextField txtQuantite;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+            id_prod.setCellValueFactory(new PropertyValueFactory<>("id_prod"));
         nom_prod.setCellValueFactory(new PropertyValueFactory<>("nom_prod"));
-        Image_prod.setCellValueFactory(new PropertyValueFactory<>("Image_prod"));
-        prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-        id_prod.setCellValueFactory(new PropertyValueFactory<>("id_prod"));
+        reference_prod.setCellValueFactory(new PropertyValueFactory<>("reference_prod"));
+            description.setCellValueFactory(new PropertyValueFactory<>("description"));
+               prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+                quantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
 
         ObservableList<Produits> data;
         data = FXCollections.observableArrayList(p.selectall());

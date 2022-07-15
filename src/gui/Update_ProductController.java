@@ -5,30 +5,21 @@
  */
 package gui;
 
-import edu.esprit.entities.Categories;
 import edu.esprit.entities.Produits;
 import edu.esprit.services.ProduitService;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -38,16 +29,17 @@ import javafx.stage.Stage;
 public class Update_ProductController implements Initializable {
 
     @FXML
-    private TextField txtName;
+    private TextField txtNom;
     @FXML
-    private TextField txtDescription;
+    private TextField txtRef;
     @FXML
-    private TextField txtPrice;
+    private TextField txtid;
     @FXML
-    private Button btnUpdate;
+    private TextField txtPrix;
     @FXML
-    private Button btnCancel;
-    ProduitService p = new ProduitService();
+    private TextField txtDes;
+    @FXML
+    private TextField txtQ;
     @FXML
     private TableView<Produits> table;
     @FXML
@@ -55,25 +47,51 @@ public class Update_ProductController implements Initializable {
     @FXML
     private TableColumn<Produits, String> nom_prod;
     @FXML
-    private TableColumn<Produits, String> Image_prod;
+    private TableColumn<Produits, String> reference_prod;
+    @FXML
+    private TableColumn<Produits, String> description;
     @FXML
     private TableColumn<Produits, String> prix;
     @FXML
-    private TextField txtid;
+    private TableColumn<Produits, String> quantite;
     @FXML
     private Text deco;
-
+ProduitService p = new ProduitService();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        nom_prod.setCellValueFactory(new PropertyValueFactory<>("nom_prod"));
-        Image_prod.setCellValueFactory(new PropertyValueFactory<>("Image_prod"));
-        prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        //   
         id_prod.setCellValueFactory(new PropertyValueFactory<>("id_prod"));
+        nom_prod.setCellValueFactory(new PropertyValueFactory<>("nom_prod"));
+        reference_prod.setCellValueFactory(new PropertyValueFactory<>("reference_prod"));
+            description.setCellValueFactory(new PropertyValueFactory<>("description"));
+               prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+                quantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
+      
 
+        ObservableList<Produits> data;
+        data = FXCollections.observableArrayList(p.selectall());
+        table.setItems(data);
+    }    
+
+    @FXML
+    private void deco(MouseEvent event) {
+    }
+
+    @FXML
+    private void updateProdi(ActionEvent event) {
+        
+        Produits c = new Produits();
+c.setId_prod(Integer.parseInt(txtid.getText()));
+        c.setNom_prod(txtNom.getText());
+     c.setReference_prod(txtRef.getText());
+        c.setDescription(txtDes.getText());
+        c.setPrix(txtPrix.getText());
+        c.setPrix(txtQ.getText());
+       
+p.updateProduit(c);
         ObservableList<Produits> data;
         data = FXCollections.observableArrayList(p.selectall());
         table.setItems(data);
@@ -81,51 +99,29 @@ public class Update_ProductController implements Initializable {
     }
 
     @FXML
-    private void Update_button(ActionEvent event) {
-
-        ProduitService cs = new ProduitService();
-
-        Produits c = new Produits();
-
-        c.setNom_prod(txtName.getText());
-        c.setImage_prod(txtDescription.getText());
-        c.setPrix(txtPrice.getText());
-        c.setId_prod(Integer.parseInt(txtid.getText()));
-
-        cs.updateProduit(c);
-        ObservableList<Produits> data;
-        data = FXCollections.observableArrayList(cs.selectall());
-        table.setItems(data);
-
-    }
-
-    @FXML
-    private void Cancel_button(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("ProduitDisplay.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
     private void select(ActionEvent event) {
-        Produits css1 = table.getSelectionModel().getSelectedItem();
 
-        String a = css1.getNom_prod();
-        String b = css1.getImage_prod();
-        String c = css1.getPrix();
-       String d = String.valueOf(css1.getId_prod());
+        Produits p = table.getSelectionModel().getSelectedItem();
+   String a = String.valueOf(p.getId_prod());
+        String b= p.getNom_prod();
+        
+        String c = p.getReference_prod();
+        String d = p.getDescription();
+        
+        String e = p.getPrix();
+        String f = p.getQuantite();
+    
+  txtid.setText(a);
+        txtNom.setText(b);
+        
+        txtRef.setText(c);
+        txtDes.setText(d);
+        txtPrix.setText(e);
+        txtQ.setText(f);
+        
+     
 
-        txtName.setText(a);
-        txtDescription.setText(b);
-        txtPrice.setText(c);
-        txtid.setText(d);
-
+        
     }
-
-    @FXML
-    private void deco(MouseEvent event) {
-    }
-
+    
 }

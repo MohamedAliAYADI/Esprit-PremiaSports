@@ -22,30 +22,34 @@ import java.util.logging.Logger;
 public class ProduitService {
 
     Connection cnx = MyConnection.getInstance().cnx;
-    CategorieService cs = new CategorieService();
-
+ 
 //***************1) ISERT PRODUIT ****************
     public void insertProduits(Produits p) {
 
         try {
-            String req = "INSERT INTO `produits`(`nom_prod`, `Image_prod`,`prix`) VALUES (?,?,?)";
+       String req = "INSERT INTO `produits`(`nom_prod`,`reference_prod`, `description` , `prix` ,`quantite`) VALUES (?,?,?,?,?)";
 
-            PreparedStatement ps = cnx.prepareStatement(req);
+          PreparedStatement ps = cnx.prepareStatement(req);
 
             ps.setString(1, p.getNom_prod());
 
-            ps.setString(2, p.getImage_prod());
-            ps.setString(3, p.getPrix());
+            ps.setString(2, p.getReference_prod());
+          
+           ps.setString(3, p.getDescription());
+          
+         ps.setString(4, p.getPrix());
+        
+         
+         ps.setString(5, p.getQuantite());  
+//         ps.setInt(6, p.getId_catg().getId_catg());
+          //ps.setString(7, p.getId_catg());  
+  
             ps.executeUpdate();
-            System.out.println("PRD ajouté !");
-
-            // ps.setInt(3, p.getPrixprod());
-            //ps.setInt(4, p.getCategories().getId_catg());
-            //System.out.println("Produits "
-            //  + p.getNom_prod() + "cat " + p.getCategories().getNom_cat()
-            //  + " Produit ajouté avec succé  ");
+            
+            System.out.println("produit ajouté !");
         } catch (SQLException ex) {
-            Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CategorieService.class.getName()).log(Level.SEVERE, null, ex);
+
         }
 
     }
@@ -63,10 +67,14 @@ public class ProduitService {
             while (result.next()) {
                 int id_prod = result.getInt(1);
                 String nom_prod = result.getString(2);
-                String Image_prod = result.getString(3);
-                String prix = result.getString(4);
+                String reference_prod = result.getString(3);
+                 String description = result.getString(4);
+                String prix = result.getString(5);
+                String Image_prod = result.getString(6);
+                 String quantite = result.getString(7);
+                 String id_catg = result.getString(8);
 
-                l.add(new Produits(id_prod, nom_prod, Image_prod, prix));
+                l.add(new Produits(id_prod,nom_prod, reference_prod,description,prix,quantite));
 
             }
 
@@ -129,17 +137,20 @@ public class ProduitService {
 
         try {
 
-            String req = "UPDATE `produits`" + " SET `nom_prod`=?, `Image_prod`=? ,`prix`=?" + " WHERE id_prod=?";
+        
+            String req = "UPDATE `produits`" + " SET `nom_prod`=?, `reference_prod`=? ,`description`=?,`prix`=?, `quantite`=?" + " WHERE id_prod=?";
 
             PreparedStatement statement = cnx.prepareStatement(req);
             statement.setString(1, p.getNom_prod());
-            statement.setString(2, p.getImage_prod());
-            statement.setString(3, p.getPrix());
-            statement.setInt(4, p.getId_prod());
+            statement.setString(2, p.getReference_prod());
+            statement.setString(3, p.getDescription());
+             statement.setString(4, p.getPrix());
+             statement.setString(5, p.getQuantite());
+           statement.setInt(6, p.getId_prod());
 
             statement.executeUpdate();
 
-            System.out.println("Produit est mise à jour avec succé");
+            System.out.println("Produit modifié avec succé");
         } catch (SQLException ex) {
             Logger.getLogger(CategorieService.class.getName()).log(Level.SEVERE, null, ex);
         }

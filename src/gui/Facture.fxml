@@ -7,16 +7,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gui.FactureController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FactureController">
    <children>
       <TableView fx:id="tvFacture" layoutX="39.0" layoutY="124.0" prefHeight="514.0" prefWidth="722.0" style="-fx-border-color: white; -fx-background-color: #f4fcf5;" />
-      <Label fx:id="labtot" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="638.0" prefHeight="50.0" prefWidth="722.0" style="-fx-background-color: #7B1FA2;">
+      <Label fx:id="labtot" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="638.0" prefHeight="50.0" prefWidth="722.0" style="-fx-background-color: #1563EA;">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextField alignment="CENTER" layoutX="39.0" layoutY="9.0" prefHeight="114.0" prefWidth="709.0" style="-fx-background-color: #7B1FA2;" text="Facture">
+      <TextField alignment="CENTER" layoutX="39.0" layoutY="9.0" prefHeight="114.0" prefWidth="709.0" style="-fx-background-color: #1563EA;" text="Facture">
          <font>
             <Font size="50.0" />
          </font>

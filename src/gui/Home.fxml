@@ -10,11 +10,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="772.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="425.0" prefWidth="403.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HomeController">
    <children>
-      <VBox layoutX="14.0" layoutY="70.0" prefHeight="354.0" prefWidth="326.0" style="-fx-background-color: white;">
+      <VBox layoutX="-6.0" layoutY="39.0" prefHeight="386.0" prefWidth="166.0" style="-fx-background-color: #0000FF;">
          <children>
             <Pane fx:id="panedhash" onMouseClicked="#dashclik" onMouseEntered="#dashbordentred" onMouseExited="#dashbordexit" prefHeight="59.0" prefWidth="265.0">
                <children>
@@ -23,7 +22,7 @@
                         <Image url="@../pic/blog1.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="77.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #1E90FF;" text="Produits" />
+                  <Button layoutY="17.0" mnemonicParsing="false" onAction="#Home" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Profil" textFill="WHITE" />
                </children>
             </Pane>
             <Pane onMouseClicked="#shopclik" onMouseEntered="#shopentred" onMouseExited="#shopexit" prefHeight="50.0" prefWidth="170.0">
@@ -33,10 +32,13 @@
                         <Image url="@../pic/shop1.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="80.0" layoutY="24.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Commandes" />
+                  <Button layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Mes Commandes" textFill="#f7f4f4" />
                </children>
             </Pane>
-            <Pane onMouseClicked="#promoclik" onMouseEntered="#promotionentred" onMouseExited="#promotionexit" prefHeight="50.0" prefWidth="170.0" />
+            <Pane onMouseClicked="#promoclik" onMouseEntered="#promotionentred" onMouseExited="#promotionexit" prefHeight="50.0" prefWidth="170.0">
+               <children>
+                  <Button layoutY="2.0" mnemonicParsing="false" onAction="#gotoreclamationpage" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Mes Reclamation" textFill="#ece6e6" />
+               </children></Pane>
             <Pane onMouseClicked="#evenementclik" onMouseEntered="#evenemtionentred" onMouseExited="#evenemtionexit" prefHeight="50.0" prefWidth="170.0">
                <children>
                   <ImageView fx:id="imgpromotion" fitHeight="41.0" fitWidth="41.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
@@ -44,44 +46,25 @@
                         <Image url="@../pic/promotion1.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="80.0" layoutY="-4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Promotion" />
-               </children>
-            </Pane>
-            <Pane fx:id="paneavis" onMouseClicked="#avisclik" onMouseEntered="#avisentred" onMouseExited="#avisexit" prefHeight="50.0" prefWidth="170.0">
-               <children>
-                  <Pane layoutX="-3.0" layoutY="16.0" onMouseClicked="#livclik" onMouseEntered="#livraisonentred" onMouseExited="#livraisonexit" prefHeight="50.0" prefWidth="170.0">
+                  <Button layoutY="2.0" mnemonicParsing="false" onAction="#panier" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Panier" textFill="#efe7e7" />
+                  <Pane layoutX="-93.0" layoutY="26.0" onMouseClicked="#wishclik" onMouseEntered="#wishlistentred" onMouseExited="#wishlistexit" prefHeight="50.0" prefWidth="170.0">
                      <children>
-                        <ImageView fx:id="imgmessage" fitHeight="41.0" fitWidth="67.0" layoutX="7.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgpanier" fitHeight="41.0" fitWidth="41.0" layoutX="8.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../pic/wishlist1.png" />
+                              <Image url="@../pic/panier1.png" />
                            </image>
                         </ImageView>
+                        <Pane layoutX="2.0" layoutY="24.0" onMouseClicked="#messeclik" onMouseEntered="#messagentred" onMouseExited="#messagexit" prefHeight="50.0" prefWidth="170.0" />
                      </children>
                   </Pane>
-                  <Button layoutX="82.0" layoutY="1.0" mnemonicParsing="false" onAction="#gotoreclamationpage" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Reclamation" />
                </children>
             </Pane>
-            <Pane onMouseClicked="#wishclik" onMouseEntered="#wishlistentred" onMouseExited="#wishlistexit" prefHeight="50.0" prefWidth="170.0">
-               <children>
-                  <ImageView fx:id="imgpanier" fitHeight="41.0" fitWidth="41.0" layoutX="8.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../pic/panier1.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="81.0" layoutY="25.0" mnemonicParsing="false" onAction="#panier" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Panier" />
-               </children>
-            </Pane>
-            <Pane onMouseClicked="#messeclik" onMouseEntered="#messagentred" onMouseExited="#messagexit" prefHeight="50.0" prefWidth="170.0" />
+            <Button mnemonicParsing="false" onAction="#ProdClient" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;" text="Produits" textFill="#fafbfc" />
          </children>
       </VBox>
-      <AnchorPane layoutX="-25.0" prefHeight="43.0" prefWidth="882.0" style="-fx-background-color: #87CEFA;">
+      <AnchorPane prefHeight="35.0" prefWidth="412.0" style="-fx-background-color: #87CEFA;">
          <children>
-            <Text fx:id="deco" fill="WHITE" layoutX="705.0" layoutY="37.0" onMouseClicked="#deco" strokeType="OUTSIDE" strokeWidth="0.0" text="Deconnexion" wrappingWidth="118.74804961681366">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Text>
-            <HBox layoutX="86.0" layoutY="-4.0" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;">
+            <HBox layoutY="-7.0" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;">
                <children>
                   <Label prefHeight="26.0" prefWidth="165.0" text="PremiaSports" textFill="WHITE">
                      <font>

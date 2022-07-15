@@ -37,13 +37,7 @@ public class HomeController implements Initializable {
     @FXML
     private ImageView imgpromotion;
     @FXML
-    private Pane paneavis;
-    @FXML
-    private ImageView imgmessage;
-    @FXML
     private ImageView imgpanier;
-    @FXML
-    private Text deco;
 
     /**
      * Initializes the controller class.
@@ -101,29 +95,6 @@ public class HomeController implements Initializable {
     private void evenementclik(MouseEvent event) {
     }
 
-    @FXML
-    private void livraisonexit(MouseEvent event) {
-    }
-
-    @FXML
-    private void livraisonentred(MouseEvent event) {
-    }
-
-    @FXML
-    private void livclik(MouseEvent event) {
-    }
-
-    @FXML
-    private void avisexit(MouseEvent event) {
-    }
-
-    @FXML
-    private void avisentred(MouseEvent event) {
-    }
-
-    @FXML
-    private void avisclik(MouseEvent event) {
-    }
 
     @FXML
     private void wishlistexit(MouseEvent event) {
@@ -149,9 +120,6 @@ public class HomeController implements Initializable {
     private void messeclik(MouseEvent event) {
     }
 
-    @FXML
-    private void deco(MouseEvent event) {
-    }
 
     @FXML
     private void gotoreclamationpage(ActionEvent event) throws IOException {
@@ -165,6 +133,28 @@ public class HomeController implements Initializable {
     @FXML
     private void panier(ActionEvent event) throws IOException {
          Parent root = FXMLLoader.load(getClass().getResource("panierList.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
+
+ 
+
+    @FXML
+    private void Home(ActionEvent event) throws IOException {
+        
+             Parent root = FXMLLoader.load(getClass().getResource("FXMLDocumentsPage.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void ProdClient(ActionEvent event) throws IOException {
+        
+             Parent root = FXMLLoader.load(getClass().getResource("ProduitClient.fxml"));
         Scene scene = new Scene(root);
         Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
         stage.setScene(scene);

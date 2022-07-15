@@ -22,7 +22,7 @@
                      <children>
                         <AnchorPane prefHeight="525.0" prefWidth="843.0">
                            <children>
-                              <Label layoutX="102.0" layoutY="79.0" prefHeight="35.0" prefWidth="223.0" text="Listes des Categories" textFill="#b422a8">
+                              <Label layoutX="102.0" layoutY="79.0" prefHeight="35.0" prefWidth="223.0" text="Listes des Categories" textFill="#3522b2">
                                  <font>
                                     <Font name="System Bold" size="22.0" />
                                  </font>
@@ -31,14 +31,14 @@
                               <Button layoutX="505.0" layoutY="163.0" mnemonicParsing="false" onAction="#gototnewcatpage" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #1E90FF;" text="Ajouter" textFill="#f2e9e9" />
                               <TableView fx:id="table" layoutX="98.0" layoutY="136.0" prefHeight="282.0" prefWidth="223.0">
                                  <columns>
-                                    <TableColumn fx:id="id_catg" minWidth="0.0" prefWidth="81.59999084472656" text="Identifiant" />
-                                    <TableColumn fx:id="type" prefWidth="68.800048828125" text="Type" />
+                                    <TableColumn fx:id="id_catg" minWidth="0.0" prefWidth="0.0" text="Identifiant" />
+                                    <TableColumn fx:id="type" prefWidth="151.19998168945312" text="Type" />
                                     <TableColumn fx:id="nom_cat" prefWidth="71.20001525878905" text="Nom" />
                                  </columns>
                               </TableView>
                               <Button layoutX="505.0" layoutY="391.0" mnemonicParsing="false" onAction="#gotofxmldocument" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #1E90FF;" text="Retour" textFill="#faf2f2" />
                               <Button layoutX="505.0" layoutY="243.0" mnemonicParsing="false" onAction="#updatee" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #1E90FF;" text="Modifier" textFill="#e4dede" />
-                              <Label alignment="CENTER" layoutX="471.0" layoutY="79.0" prefHeight="35.0" prefWidth="223.0" text="Menu" textFill="#b422a8">
+                              <Label alignment="CENTER" layoutX="471.0" layoutY="79.0" prefHeight="35.0" prefWidth="223.0" text="Menu" textFill="#225eb2">
                                  <font>
                                     <Font name="System Bold" size="22.0" />
                                  </font>

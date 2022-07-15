@@ -6,14 +6,12 @@
 package gui;
 
 import edu.esprit.entities.Categories;
-import edu.esprit.entities.Produits;
-import edu.esprit.services.CategorieService;
+import edu.esprit.entities.Reclamation;
+import edu.esprit.services.ReclamationService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
-import static javafx.collections.FXCollections.observableArrayList;
-import static javafx.collections.FXCollections.observableList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +21,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -36,44 +33,53 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class CategoriesDisplayController implements Initializable {
+public class ReclamationDisplayController implements Initializable {
 
+    @FXML
+    private TableColumn<Reclamation, Integer> id;
+    @FXML
+    private TableColumn<Reclamation, String> sujet;
+    @FXML
+    private TableColumn<Reclamation, String> description;
+    @FXML
+    private TableColumn<Reclamation, String> statut;
+    @FXML
+    private TableView<Reclamation> table;
+ReclamationService rc = new ReclamationService ();
+    @FXML
+    private Button RecEntreprise;
     @FXML
     private Button btnDelete;
-    @FXML
-    private TableView<Categories> table;
-    @FXML
-    private TableColumn<Categories,String> type;
-    CategorieService cs = new  CategorieService ();
-    Categories c = new Categories ();
-    @FXML
-    private TableColumn<Categories, Integer> id_catg;
-    @FXML
-    private TableColumn<Categories, String> nom_cat;
-    @FXML
-    private Text deco;
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-         //id_catg.setCellValueFactory(new PropertyValueFactory<>("id_catg"));
-        type.setCellValueFactory(new PropertyValueFactory<>("type"));
-        nom_cat.setCellValueFactory(new PropertyValueFactory<>("nom_cat"));
+      
+         id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        sujet.setCellValueFactory(new PropertyValueFactory<>("sujet"));
+        description.setCellValueFactory(new PropertyValueFactory<>("description"));
+         statut.setCellValueFactory(new PropertyValueFactory<>("statut"));
        
-        ObservableList<Categories> data;
-        data = FXCollections.observableArrayList(cs.selectall());
+        ObservableList<Reclamation> data;
+        data = FXCollections.observableArrayList(rc.selectall());
     table.setItems(data);
  
     }
 
-   
+
+    @FXML
+    private void ReclamationDisplay(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Reclamation.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     private void deleteButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SupCatg.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SupReclamation.fxml"));
         Scene scene = new Scene(root);
         Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
         stage.setScene(scene);
@@ -81,8 +87,16 @@ public class CategoriesDisplayController implements Initializable {
     }
 
     @FXML
-    private void gototnewcatpage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("NewCategori.fxml"));
+    private void goback(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("Reclamation.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void addpage(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("AjouterReclamation.fxml"));
         Scene scene = new Scene(root);
         Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
         stage.setScene(scene);
@@ -90,31 +104,9 @@ public class CategoriesDisplayController implements Initializable {
     }
 
     @FXML
-    private void gotofxmldocument(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocumentsPage.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
-        stage.setScene(scene);
-        stage.show();
+    private void UpdateStatut(ActionEvent event) {
     }
 
-    @FXML
-    private void updatee(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("updcateg.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
-        stage.setScene(scene);
-        stage.show();
-        
-    }
-
-    @FXML
-    private void deco(MouseEvent event) {
-    }
-
+    }    
     
 
-    
-
-  
-}

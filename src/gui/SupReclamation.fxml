@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SupReclamationController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="33.0" layoutY="14.0" prefHeight="539.0" prefWidth="776.0">
+         <children>
+            <Label layoutX="52.0" layoutY="46.0" prefHeight="35.0" prefWidth="256.0" text="Supprimer Reclamation" textFill="#c9bdbd">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table" layoutX="52.0" layoutY="82.0" prefHeight="320.0" prefWidth="357.0">
+               <columns>
+                  <TableColumn fx:id="id" minWidth="0.0" prefWidth="0.800018310546875" text="id" />
+                  <TableColumn fx:id="sujet" minWidth="0.0" prefWidth="118.39995956420898" text="Sujet" />
+                  <TableColumn fx:id="description" minWidth="0.0" prefWidth="236.80006408691406" text="Description" />
+                  <TableColumn fx:id="statut" minWidth="0.0" prefWidth="148.0" text="Statut" />
+               </columns>
+            </TableView>
+            <Button layoutX="65.0" layoutY="469.0" mnemonicParsing="false" onAction="#returnn" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="retour" />
+            <TextField fx:id="txtid" disable="true" layoutX="539.0" layoutY="470.0" prefHeight="25.0" prefWidth="163.0" />
+            <TextField fx:id="txtdescription" disable="true" layoutX="544.0" layoutY="252.0" prefHeight="170.0" prefWidth="296.0" />
+            <TextField fx:id="txtstatut" disable="true" layoutX="276.0" layoutY="470.0" prefHeight="0.0" prefWidth="63.0" />
+            <Text layoutX="412.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="533.0" layoutY="454.0" mnemonicParsing="false" onAction="#delete" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: red;" text="Supprimer" textFill="#f4ecec">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="-50.0" layoutY="2.0" prefHeight="43.0" prefWidth="882.0" style="-fx-background-color: #87CEFA;">
+               <children>
+                  <Text fx:id="deco" fill="WHITE" layoutX="784.0" layoutY="38.0" onMouseClicked="#deco" strokeType="OUTSIDE" strokeWidth="0.0" text="Deconnexion" wrappingWidth="118.74804961681366">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Text>
+                  <HBox layoutX="86.0" layoutY="-4.0" prefHeight="25.0" prefWidth="166.0" style="-fx-background-color: #1E90FF;">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="165.0" text="PremiaSports" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Medium" size="21.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="txtsujet" disable="true" layoutX="544.0" layoutY="206.0" prefHeight="35.0" prefWidth="163.0" />
+            <Text layoutX="427.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sujet">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="251.0" layoutY="469.0" mnemonicParsing="false" onAction="#selectdelet" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" text="Selectionner " />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

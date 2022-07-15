@@ -29,17 +29,17 @@ public class MainFX extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            
-        String myMobile ="90680010";
-        String SMS="hello";
-        String mySender="mySender";
-        String Url="https://www.tunisiesms.tn/client/Api/Api.aspx?fct=sms&key=OrGLZv3yXPMfWZnPn6YgcBUiVxCbXCGEuHJpIUtlGT8Fd3DomSsKqpZvNKpmfRMPS/-//-/kRVsJDSSodVKBIEHtRnhxbGBZVcaC";
-        Url=Url.replace("21690680010", myMobile);
-        Url=Url.replace("hello", SMS);
-        
-        URL myURL   = new URL   (Url);
-        URLConnection myURLConnection = myURL.openConnection();
-        myURLConnection.connect();
+//            
+//        String myMobile ="90680010";
+//        String SMS="hello";
+//        String mySender="mySender";
+//        String Url="https://www.tunisiesms.tn/client/Api/Api.aspx?fct=sms&key=OrGLZv3yXPMfWZnPn6YgcBUiVxCbXCGEuHJpIUtlGT8Fd3DomSsKqpZvNKpmfRMPS/-//-/kRVsJDSSodVKBIEHtRnhxbGBZVcaC";
+//        Url=Url.replace("21690680010", myMobile);
+//        Url=Url.replace("hello", SMS);
+//        
+//        URL myURL   = new URL   (Url);
+//        URLConnection myURLConnection = myURL.openConnection();
+//        myURLConnection.connect();
         
             //root 
             Parent  root = FXMLLoader.load(getClass().getResource("..//gui//loginpage.fxml"));

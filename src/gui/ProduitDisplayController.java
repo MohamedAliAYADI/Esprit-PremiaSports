@@ -5,6 +5,7 @@
  */
 package gui;
 
+import edu.esprit.entities.Categories;
 import edu.esprit.entities.Produits;
 import edu.esprit.services.ProduitService;
 import java.io.IOException;
@@ -44,23 +45,34 @@ public class ProduitDisplayController implements Initializable {
     private TableColumn<Produits, Integer> id_prod;
     @FXML
     private TableColumn<Produits, String> nom_prod;
-    @FXML
-    private TableColumn<Produits, String> Image_prod;
+  
     @FXML
     private TableColumn<Produits, String> prix;
 ProduitService p = new ProduitService () ; 
     @FXML
     private Text deco;
+    @FXML
+    private TableColumn<Produits, String> reference_prod;
+    @FXML
+    private TableColumn<Produits, String> description;
+    @FXML
+    private TableColumn<Produits, String> quantite;
+    //private TableColumn<?, ?> id_catg;
+    //private TableColumn<Categories, Integer> id_catg;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        id_prod.setCellValueFactory(new PropertyValueFactory<>("id_prod"));
+        //id_prod.setCellValueFactory(new PropertyValueFactory<>("id_prod"));
         nom_prod.setCellValueFactory(new PropertyValueFactory<>("nom_prod"));
-        Image_prod.setCellValueFactory(new PropertyValueFactory<>("Image_prod"));
-       prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        reference_prod.setCellValueFactory(new PropertyValueFactory<>("reference_prod"));
+            description.setCellValueFactory(new PropertyValueFactory<>("description"));
+               prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+                quantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
+                 //id_catg.setCellValueFactory(new PropertyValueFactory<>("id_catg"));
+    
         
                              
  ObservableList<Produits> data;

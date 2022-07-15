@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="954.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gui.MofidierReclamationController">
+<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MofidierReclamationController">
    <children>
       <Label layoutX="235.0" layoutY="201.0" text="Reclamation Consernant un(e)">
          <font>
@@ -28,7 +27,6 @@
          </font>
       </Label>
       <TextField fx:id="Sujet" alignment="CENTER" layoutX="116.0" layoutY="265.0" prefHeight="28.0" prefWidth="284.0" promptText="Sujet" style="-fx-background-color: #f4fcf5; -fx-border-color: black;" />
-      <TextField fx:id="NUAreclamer" alignment="CENTER" layoutX="116.0" layoutY="333.0" onMouseClicked="#usertoclaimsearch" prefHeight="27.0" prefWidth="323.0" promptText="clic ici pour choisir le utilisateur a reclamer" style="-fx-background-color: #f4fcf5; -fx-border-color: black;" />
       <TextArea fx:id="Description" layoutX="112.0" layoutY="414.0" prefHeight="195.0" prefWidth="577.0" promptText="Description ici" style="-fx-background-color: #f4fcf5; -fx-border-color: black;" />
       <Button fx:id="SubmitButton" layoutX="761.0" layoutY="491.0" mnemonicParsing="false" onAction="#ModifierR" prefHeight="62.0" prefWidth="81.0" style="-fx-background-color: #a5dfff;" text="modifier" />
       <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="63.0" layoutY="72.0" onMouseClicked="#retourimg" pickOnBounds="true" preserveRatio="true">

@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +27,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -52,16 +55,22 @@ public class AjoutProduitsController implements Initializable {
     private Text txtImage;
     @FXML
     private TextField nom_prod;
-    @FXML
-    private TextField image_prod;
+ 
     @FXML
     private TextField prix;
-     ProduitService prd  = new ProduitService ();
-    @FXML
+     
     private ChoiceBox<Categories> listcat;
     @FXML
     private Text deco;
-
+    @FXML
+    private TextField reference_prod;
+    @FXML
+    private TextField description;
+    @FXML
+    private TextField quantite;
+ProduitService ps = new ProduitService ();
+    @FXML
+    private ComboBox<Categories> list_catg;
     /**
      * Initializes the controller class.
      */
@@ -71,24 +80,29 @@ public class AjoutProduitsController implements Initializable {
         CategorieService cc = new CategorieService () ;
         cc.selectall() ;
     System.out.println () ;
+    
         // TODO
     }    
 
     @FXML
     private void ajouterproduit(ActionEvent event) {
-         
-        if (nom_prod.getText().isEmpty() ||image_prod.getText().isEmpty() ||  prix.getText().isEmpty() ) {
+   
+        
+         if (nom_prod.getText().isEmpty() || reference_prod.getText().isEmpty() || description.getText().isEmpty() || prix.getText().isEmpty() || quantite.getText().isEmpty() ) {
             Alert a = new Alert(Alert.AlertType.ERROR, "vous devez remplir tout les champs  ", ButtonType.OK);
             a.showAndWait();
         } else {
             
                 
-            
-  
-        Produits  p = new Produits (nom_prod.getText(), image_prod.getText(), prix.getText());
-        prd.insertProduits(p);
-            Alert a = new Alert(Alert.AlertType.INFORMATION, "Produits Ajouté !", ButtonType.OK);
+        
+         Produits cc = new Produits (nom_prod.getText(), reference_prod.getText() , description.getText(), prix.getText(), quantite.getText());
+        ps.insertProduits(cc);
+            Alert a = new Alert(Alert.AlertType.INFORMATION, "produit Ajouté !", ButtonType.OK);
                 a.showAndWait();
+         
+         
+        
+        
     }
     }
 
@@ -108,8 +122,10 @@ public class AjoutProduitsController implements Initializable {
     @FXML
     private void Cancel_button(ActionEvent event) {
          nom_prod.setText("");
-        image_prod.setText("");
+        description.setText("");
         prix.setText("");
+        reference_prod.setText("");
+        quantite.setText("");
         image.setImage(null);
  System.gc();
     }
@@ -126,5 +142,6 @@ public class AjoutProduitsController implements Initializable {
     @FXML
     private void deco(MouseEvent event) {
     }
+
     
 }

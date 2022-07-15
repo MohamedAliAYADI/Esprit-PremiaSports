@@ -2,7 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -22,9 +22,11 @@
                   <VBox layoutX="259.0" layoutY="81.0" prefHeight="274.0" prefWidth="150.0" spacing="15.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="25.0" prefWidth="151.0" text="Nom" />
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="151.0" text="Reference" />
                         <Label alignment="CENTER" prefHeight="25.0" prefWidth="151.0" text="Description" />
                         <Label alignment="CENTER" prefHeight="25.0" prefWidth="151.0" text="Prix" />
-                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="151.0" text="Categories" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="132.0" prefHeight="25.0" prefWidth="151.0" text="Quantite" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="151.0" text="Categories" />
                      </children>
                   </VBox>
                   <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
@@ -37,15 +39,17 @@
                   <Button fx:id="btnCancel" layoutX="231.0" layoutY="396.0" mnemonicParsing="false" onAction="#Cancel_button" prefHeight="26.0" prefWidth="105.0" style="-fx-background-color: #1E90FF;" text="vider" textFill="#f2e4e4" />
                   <Text fx:id="txtImage" layoutX="56.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectionner image " />
                   <TextField fx:id="nom_prod" layoutX="417.0" layoutY="81.0" />
-                  <TextField fx:id="image_prod" layoutX="418.0" layoutY="122.0" />
-                  <TextField fx:id="prix" layoutX="417.0" layoutY="164.0" />
+                  <TextField fx:id="reference_prod" layoutX="418.0" layoutY="122.0" />
+                  <TextField fx:id="description" layoutX="417.0" layoutY="164.0" />
                   <Button layoutX="69.0" layoutY="396.0" mnemonicParsing="false" onAction="#rt" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: #1E90FF;" text="retour" textFill="#f2eaea" />
-                  <ChoiceBox fx:id="listcat" layoutX="417.0" layoutY="218.0" prefWidth="150.0" style="-fx-background-color: #1E90FF;" />
-                  <Text fill="#d928bc" layoutX="415.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Produit">
+                  <Text fill="#2532c7" layoutX="415.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Produit">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Text>
+                  <TextField fx:id="prix" layoutX="417.0" layoutY="205.0" />
+                  <TextField fx:id="quantite" layoutX="418.0" layoutY="248.0" />
+                  <ComboBox fx:id="list_catg" layoutX="400.0" layoutY="291.0" prefHeight="25.0" prefWidth="216.0" />
                </children>
             </AnchorPane>
          </children>

@@ -66,4 +66,13 @@ public class FXMLDocumentsPageController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void gotoreclamation(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("clientReclamation.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage =(Stage)((Node) event.getSource()).getScene().getWindow();  
+        stage.setScene(scene);
+        stage.show();
+    }
 }

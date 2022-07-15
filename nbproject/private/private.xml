@@ -7,27 +7,26 @@
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/tests/MainClassEvent.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/SupCatgController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/Update_ProductController.java</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/SupReclamationController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/CategorieService.java</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/Crud_Promotion.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/HomeController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Commandes.java</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/CrudProduit.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Panier.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/Default/MainFX.java</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Promotion.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/SupProduit.fxml</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/ReclamationDisplay.fxml</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/CommandeDisplayController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/PanierListController.java</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/PanierService.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/MofidierReclamationController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Reclamation.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/ProduitDisplayController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/AjouterReclamationController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/Reclamation.fxml</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/ReclamationController.java</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Produit.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/LoginpageController.java</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/ReclamationService.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/Home.fxml</file>
-            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/CrudReclamation.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/utils/MyConnection.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/UpdcategController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/Facture.fxml</file>
@@ -39,6 +38,8 @@
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/AjouterReclamation.fxml</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/listepanier.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/services/CommandeService.java</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/SupReclamation.fxml</file>
+            <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/ReclamationDisplayController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/CategoriesDisplayController.java</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/gui/MofidierReclamation.fxml</file>
             <file>file:/C:/Users/user/Desktop/GitHub/Esprit-PremiaSports/src/edu/esprit/entities/Categories.java</file>

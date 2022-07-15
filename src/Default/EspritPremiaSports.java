@@ -4,9 +4,11 @@ package Default;
 import edu.esprit.entities.Categories;
 import edu.esprit.entities.Commandes;
 import edu.esprit.entities.Produits;
+import edu.esprit.entities.Reclamation;
 import edu.esprit.services.CategorieService;
 import edu.esprit.services.CommandeService;
 import edu.esprit.services.ProduitService;
+import edu.esprit.services.ReclamationService;
 import edu.esprit.utils.MyConnection;
 import java.sql.SQLException;
 
@@ -31,22 +33,29 @@ import java.sql.SQLException;
  
     
  //2) UPDATE CATEGORIES done
-     CategorieService gs = new CategorieService();
-     Categories c = new Categories ( 384,"kqhfqklhfsk","dsgds");
-     
-     gs.Update(c);
-        
-
+//     CategorieService gs = new CategorieService();
+//     Categories c = new Categories ( 384,"kqhfqklhfsk","dsgds");
+//     
+//     gs.Update(c);
+//        
+//  ReclamationService rc = new ReclamationService();
+// Reclamation r = new Reclamation(5,"RAQUETTE2222222", "lj","mjlm");
+//
+//        rc.DeleteRec(r);
      
 //3) DELETE CATEGORIES done
   //CategorieService dl = new CategorieService();
   //Categories dlsup = new Categories(225,"RAQUETTE2222222");
 
         //dl.DeleteCategories(dlsup);
-      
-
-
-
+//      
+//
+//
+//ReclamationService rs = new ReclamationService();
+//  Reclamation r = new Reclamation (14,"RAQUETTE2222222", "RAQUETTE2222222", "ok");
+//
+//        rs.DeleteCategories(r);
+//      
 
 
 
@@ -133,10 +142,23 @@ import java.sql.SQLException;
 
 
  //2) UPDATE PRODUITS done
-       ProduitService gss = new ProduitService();
-     Produits c1 = new Produits ( 106,"kqhfqklhfsk","dsgds", "hkj");
-     
-     gss.updateProduit(c1);
+//     CategorieService cs = new CategorieService();
+//        ProduitService ps = new ProduitService();
+//        
+//        //instanciate
+//        Categories csss = new Categories(3,"Informatique");
+//        Produits p = new Produits ("desc","1500dt", "quantite", "lkj" , "lj");
+//               //ps.insertProduits(p);
+//               ps.updateProduit(p);
+//  ProduitService gss = new ProduitService();
+//     Produits c1 = new Produits ( 78,"nom","ref", "desc" , "price" ,"quantie");
+//   
+//     gss.updateProduit(c1);
+        
+        //insert
+        //cs.insertCategory(c);
+        //ps.insertProduct(p);
+   // gss.updateProduit(c5);
         
            //3) DELETE PRODUITS done
 // ProduitService prdd = new ProduitService();

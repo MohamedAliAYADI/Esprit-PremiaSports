@@ -32,12 +32,12 @@
                         <Button layoutX="278.0" layoutY="413.0" mnemonicParsing="false" onAction="#returnn" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: #1E90FF;" text="Retour" textFill="#fcfafa" />
                         <TableView fx:id="table" layoutX="21.0" layoutY="122.0" prefHeight="318.0" prefWidth="228.0">
                           <columns>
-                            <TableColumn fx:id="id_catg" prefWidth="75.0" text="ID" />
-                            <TableColumn fx:id="type" prefWidth="75.0" text="TYPE" />
+                            <TableColumn fx:id="id_catg" minWidth="0.0" prefWidth="0.0" text="ID" />
+                            <TableColumn fx:id="type" prefWidth="150.3999900817871" text="TYPE" />
                               <TableColumn fx:id="nom_cat" prefWidth="75.0" text="NOM" />
                           </columns>
                         </TableView>
-                        <Label layoutX="31.0" layoutY="68.0" prefHeight="35.0" prefWidth="223.0" text="Listes des Categories" textFill="#b422a8">
+                        <Label layoutX="31.0" layoutY="68.0" prefHeight="35.0" prefWidth="223.0" text="Listes des Categories" textFill="#2237b2">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>

@@ -13,7 +13,7 @@
          <children>
             <AnchorPane layoutX="150.0" layoutY="25.0" prefHeight="350.0" prefWidth="300.0">
                <children>
-                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="52.0" prefWidth="300.0" text="Modifier Commande" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="52.0" prefWidth="300.0" text="Modifier Commande" textFill="#3e20b4" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="FreeMono" size="19.0" />
                      </font>

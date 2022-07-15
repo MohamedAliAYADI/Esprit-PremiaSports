@@ -4,40 +4,56 @@ package edu.esprit.entities;
 
 import java.util.Date;
 
-public class Reclamation {
-    private int id;
+    
+public class Reclamation {    private int id;
     private int user_id;
-    private String subject;
+    private String sujet;
     private String  description;
-    private Date    date;
-    private String type;
-    private String  userToClaim;
-    private int     state;
-    private int     important;
-    private int     trash;
-    private Date    $datetrash;
+    private String    date;
+ 
+    private String  statut;
+    
 
     public Reclamation() {
         
         
     }
 
-    public Reclamation( int user_id, String subject, String description, Date date, String type, String userToClaim) {       
+    public Reclamation(String description) {
+       
+        this.description = description;
+       
+    }
+
+    public Reclamation(int id, String sujet, String description, String statut) {
+        this.id = id;
+        this.sujet = sujet;
+        this.description = description;
+        this.statut = statut;
+    }
+
+    public Reclamation(String sujet, String description, String statut) {
+        this.sujet = sujet;
+        this.description = description;
+        this.statut = statut;
+    }
+
+    public Reclamation(int id, int user_id, String sujet, String description, String date, String statut) {
+        this.id = id;
         this.user_id = user_id;
-        this.subject = subject;
+        this.sujet = sujet;
         this.description = description;
         this.date = date;
-        this.type = type;
-        this.userToClaim = userToClaim;      
+        this.statut = statut;
     }
 
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-   
 
     public int getUser_id() {
         return user_id;
@@ -47,12 +63,12 @@ public class Reclamation {
         this.user_id = user_id;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getSujet() {
+        return sujet;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setSujet(String sujet) {
+        this.sujet = sujet;
     }
 
     public String getDescription() {
@@ -63,66 +79,25 @@ public class Reclamation {
         this.description = description;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public String getType() {
-        return type;
+    public String getStatut() {
+        return statut;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getUserToClaim() {
-        return userToClaim;
-    }
-
-    public void setUserToClaim(String userToClaim) {
-        this.userToClaim = userToClaim;
-    }
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public int getImportant() {
-        return important;
-    }
-
-    public void setImportant(int important) {
-        this.important = important;
-    }
-
-    public int getTrash() {
-        return trash;
-    }
-
-    public void setTrash(int trash) {
-        this.trash = trash;
+    public void setStatut(String statut) {
+        this.statut = statut;
     }
 
     @Override
     public String toString() {
-        return "Reclamation{" + "id=" + id + ", user_id=" + user_id + ", subject=" + subject + ", description=" + description + ", date=" + date + ", type=" + type + ", userToClaim=" + userToClaim + ", state=" + state + ", important=" + important + ", trash=" + trash + ", $datetrash=" + $datetrash + '}';
+        return "Reclamation{" + "id=" + id + ", user_id=" + user_id + ", sujet=" + sujet + ", description=" + description + ", date=" + date + ", statut=" + statut + '}';
     }
 
-    public Date get$datetrash() {
-        return $datetrash;
-    }
-
-    public void set$datetrash(Date $datetrash) {
-        this.$datetrash = $datetrash;
-    }
-            
-    
 }
