@@ -27,11 +27,12 @@ import java.util.logging.Logger;
  */
 public class ClientService implements UserServicesInterface{
            MyConnection cn= MyConnection.getInstance();
-
+           
     @Override
     public void addUser(Object o) {
       Client c;
          c = (Client)o;
+        
                    try {
             String req = "INSERT INTO `client`(`pseudo`, `password`, `nom`, "
                     + "`prenom`, `dob`, `email`, `adress`, `telephone`, "
@@ -57,7 +58,7 @@ public class ClientService implements UserServicesInterface{
 
             System.out.println("User "
                     + c.getNom()+ " added successfully" );
-
+                    
         } catch (SQLException ex) {
             Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }

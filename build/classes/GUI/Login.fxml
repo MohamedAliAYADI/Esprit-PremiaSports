@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginController">
+   <left>
+      <AnchorPane prefHeight="410.0" prefWidth="228.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="176.0" layoutX="26.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/logo-denoised_geekz.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #004285;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="pseudoIn" alignment="CENTER" layoutX="9.0" layoutY="137.0" onKeyReleased="#testPseudo" opacity="0.5" prefHeight="25.0" prefWidth="231.0" promptText="Votre Pseudo" />
+            <Button layoutX="120.0" layoutY="270.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #45b1e7;" text="Connecter" />
+            <Label alignment="CENTER" layoutX="8.0" layoutY="103.0" prefHeight="17.0" prefWidth="277.0" text="Pseudo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="178.0" prefHeight="17.0" prefWidth="276.0" text="Mot de pass" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordIn" alignment="CENTER" layoutX="9.0" layoutY="212.0" onKeyReleased="#testPassword" opacity="0.5" prefHeight="25.0" prefWidth="236.0" promptText="Votre Mot de pass" />
+            <Hyperlink layoutX="167.0" layoutY="363.0" onAction="#PseudoFogot" text="Pseudo oublié?" />
+            <Hyperlink layoutX="35.0" layoutY="363.0" onAction="#PasswordForgot" text="Mot de pass oublié?" />
+            <Label alignment="CENTER" layoutX="78.0" layoutY="34.0" text="Connecter" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="33.0" layoutY="377.0" onAction="#SignUpAction" text="Nouvel utilisateur? S'inscrire maintenant!" />
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="262.0" layoutY="8.0" onMouseClicked="#closeApplication" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/if_icon-close-round_211651.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pseudoCheckMark" fitHeight="21.0" fitWidth="21.0" layoutX="241.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="PasswordCheckMark" fitHeight="21.0" fitWidth="21.0" layoutX="245.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>

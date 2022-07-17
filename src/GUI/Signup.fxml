@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SignupController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="emaik" fitHeight="150.0" fitWidth="200.0" layoutX="1.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/logo-vector_x3-denoised.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="6.0" layoutY="4.0" onMouseClicked="#RetourAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/go-back-button_icon-icons.com_53983.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="401.0" style="-fx-background-color: #004285;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="169.0" layoutY="39.0" text="S'inscrire" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="97.0" text="Pseudo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PseudoIn" alignment="CENTER" layoutX="14.0" layoutY="114.0" onKeyReleased="#testPseudo" opacity="0.5" />
+            <Label layoutX="48.0" layoutY="148.0" text="Mot de pass" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="374.0" layoutY="97.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EmailIn" alignment="CENTER" layoutX="315.0" layoutY="113.0" onKeyReleased="#testMail" opacity="0.5" />
+            <TextField fx:id="EmailInConfirmation" alignment="CENTER" layoutX="315.0" layoutY="164.0" onKeyReleased="#testMail2" opacity="0.5" />
+            <Label layoutX="336.0" layoutY="148.0" text="Email confirmation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="199.0" text="Mot de pass confirmation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="NameIn" alignment="CENTER" layoutX="14.0" layoutY="265.0" onKeyReleased="#testNom" opacity="0.5" />
+            <TextField fx:id="FirstNameIn" alignment="CENTER" layoutX="315.0" layoutY="265.0" onKeyReleased="#testPrenom" opacity="0.5" />
+            <DatePicker fx:id="DOB" layoutX="14.0" layoutY="316.0" opacity="0.5" prefHeight="25.0" prefWidth="163.0" />
+            <TextField fx:id="AdressIn" alignment="CENTER" layoutX="315.0" layoutY="316.0" onKeyReleased="#testAddres" opacity="0.5" />
+            <TextField fx:id="phoneIn" alignment="CENTER" layoutX="14.0" layoutY="366.0" onKeyReleased="#testTel" opacity="0.5" />
+            <TextField fx:id="weightIn" alignment="CENTER" layoutX="14.0" layoutY="424.0" opacity="0.5" />
+            <Label layoutX="40.0" layoutY="299.0" text="Date de naissance" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="73.0" layoutY="249.0" text="Nom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="377.0" layoutY="199.0" text="Role" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="368.0" layoutY="249.0" text="Prenom" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="371.0" layoutY="299.0" text="Adress" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="57.0" layoutY="344.0" text="Telephone" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="373.0" layoutY="344.0" text="Genre" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="heightIn" alignment="CENTER" layoutX="315.0" layoutY="424.0" opacity="0.5" />
+            <TextField fx:id="professionIn" alignment="CENTER" layoutX="174.0" layoutY="477.0" opacity="0.5" />
+            <Label layoutX="75.0" layoutY="404.0" text="Poids" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="374.0" layoutY="404.0" text="Taille" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="219.0" layoutY="459.0" text="Profession" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button alignment="CENTER" layoutX="217.0" layoutY="525.0" mnemonicParsing="false" onAction="#SignInAction" style="-fx-background-color: #45b1e7;" text="S'inscrire" />
+            <ChoiceBox fx:id="Role" layoutX="315.0" layoutY="216.0" opacity="0.5" prefWidth="150.0" />
+            <ChoiceBox fx:id="Gender" layoutX="315.0" layoutY="366.0" opacity="0.5" prefWidth="150.0" />
+            <PasswordField fx:id="PasswordIn" alignment="CENTER" layoutX="14.0" layoutY="164.0" onKeyReleased="#testPassword" opacity="0.5" />
+            <PasswordField fx:id="PasswordInConfirmation" alignment="CENTER" layoutX="16.0" layoutY="216.0" onKeyReleased="#testPass2" opacity="0.5" />
+            <ImageView fx:id="emailCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="nomCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="165.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="emailCheckMarkBis" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="roleCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="prenomCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="addressCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="genderCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="heightCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="294.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="professCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="325.0" layoutY="480.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="pseudoCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="163.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="passwordCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="166.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="passwordCheckMarkBis" fitHeight="19.0" fitWidth="22.0" layoutX="165.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="dobCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="176.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="telCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="163.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="weightCheckMark" fitHeight="19.0" fitWidth="22.0" layoutX="163.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="460.0" layoutY="4.0" onMouseClicked="#closeApplication" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/if_icon-close-round_211651.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

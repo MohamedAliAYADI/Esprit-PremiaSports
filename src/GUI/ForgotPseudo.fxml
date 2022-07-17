@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ForgotPseudoController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="228.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/logo-vector_x3-denoised.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#RetoutAction" style="-fx-background-color: #45b1e7;" text="Retour" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="332.0" style="-fx-background-color: #004285;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="65.0" layoutY="57.0" text="Pseudo oublié" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="132.0" layoutY="152.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailIn" layoutX="81.0" layoutY="187.0" opacity="0.5" />
+            <Button fx:id="CancelBtn" layoutX="81.0" layoutY="274.0" mnemonicParsing="false" onAction="#CancelBtnAction" style="-fx-background-color: #45b1e7;" text="Quitter" />
+            <Button layoutX="176.0" layoutY="274.0" mnemonicParsing="false" onAction="#ValidatePseudoAction" style="-fx-background-color: #45b1e7;" text="Valider" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
