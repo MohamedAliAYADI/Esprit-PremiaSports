@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.utils.UpdateCoachNotesController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #4285f4;">
+         <children>
+            <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0"  mnemonicParsing="false" onAction="#goGeneralChat" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Overview" textFill="#e7e5e5">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Reservation">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Open_Envelope_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnCustomers" alignment="BASELINE_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#getUpdateCodePromoView" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Coaching">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSettings4" alignment="BASELINE_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#getListCoachNotesView" prefHeight="42.0" prefWidth="222.0" stylesheets="@style.css" text="List coach notes">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSettings31" alignment="BASELINE_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#getAddCoachNotesView" prefHeight="42.0" prefWidth="222.0" stylesheets="@style.css" text="Add coach notes">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Box_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#getListCodePromoView" prefHeight="42.0" prefWidth="222.0" stylesheets="@style.css" text="List codePromo training">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSettings3" alignment="BASELINE_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#getAddCodePromoVView" prefHeight="42.0" prefWidth="222.0" stylesheets="@style.css" text="Add codePromo training">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Box_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSettings1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Settings">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Slider__32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSignout1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #ffff">
+	     <Text layoutX="22.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update coach notes" wrappingWidth="282.0">
+        <font>
+           <Font name="System Bold" size="19.0" />
+        </font>
+     </Text>
+      <Button layoutX="235.0" layoutY="537.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: #4285f4;" text="Update note" textFill="WHITE" />
+      <TextField fx:id="id_title" layoutX="36.0" layoutY="101.0" prefHeight="25.0" prefWidth="282.0" />
+      <Text layoutX="36.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="75.13671875">
+            <font>
+               <Font size="15.0" />
+            </font></Text>
+      <Text layoutX="109.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" wrappingWidth="75.13671875" />
+         <Text layoutX="36.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="86.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_description" layoutX="36.0" layoutY="168.0" prefHeight="342.0" prefWidth="282.0" />
+         <AnchorPane layoutX="351.0" layoutY="8.0" prefHeight="564.0" prefWidth="2.0" style="-fx-background-color: #d4d4d4;" />
+         <TextField fx:id="id_title_1" layoutX="411.0" layoutY="50.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 1" wrappingWidth="75.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_description_1" layoutX="411.0" layoutY="102.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description note 1" wrappingWidth="140.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_title_2" layoutX="411.0" layoutY="156.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 2" wrappingWidth="75.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_description_2" layoutX="411.0" layoutY="209.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description note 2" wrappingWidth="140.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_title_3" layoutX="411.0" layoutY="263.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 3" wrappingWidth="75.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_description_3" layoutX="411.0" layoutY="313.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description note 3" wrappingWidth="140.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_title_4" layoutX="411.0" layoutY="369.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 4" wrappingWidth="75.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_description_4" layoutX="411.0" layoutY="424.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description note 4" wrappingWidth="140.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_title_5" layoutX="411.0" layoutY="482.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 5" wrappingWidth="75.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <TextField fx:id="id_description_5" layoutX="411.0" layoutY="537.0" prefHeight="25.0" prefWidth="271.0" />
+         <Text layoutX="411.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description note 5" wrappingWidth="140.13671875">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Text>
+         <Button layoutX="124.0" layoutY="537.0" mnemonicParsing="false" onAction="#deleteCoachNote" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: red;" text="Delete note" textFill="WHITE" />
+         <Button layoutX="14.0" layoutY="537.0" mnemonicParsing="false" onAction="#openPDF" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: green;" text="Open note" textFill="WHITE" />
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

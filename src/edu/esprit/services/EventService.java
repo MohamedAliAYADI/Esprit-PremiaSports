@@ -77,7 +77,7 @@ public class EventService {
                        events.add(ev);
                    }
                } catch (SQLException ex) {
-                   Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
+                  // Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
                }
                 return events;
            }
@@ -103,7 +103,7 @@ public class EventService {
                    st = mc.cnx.createStatement();
                   rowAffected = st.executeUpdate(deleteEvent); 
                } catch (SQLException ex) {
-                   Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
+                  // Logger.getLogger(EventService.class.getName()).log(Level.SEVERE, null, ex);
                }
                if(rowAffected == 1)
                    System.out.println("event deleted succesfully");

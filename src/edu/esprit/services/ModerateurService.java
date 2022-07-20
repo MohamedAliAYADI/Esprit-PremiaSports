@@ -56,7 +56,7 @@ public class ModerateurService implements UserServicesInterface{
                     + m.getNom()+ " added successfully" );
 
         } catch (SQLException ex) {
-            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+          //  Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -143,7 +143,7 @@ public class ModerateurService implements UserServicesInterface{
                 m.setPassword(rs.getString("prenom"));
                                    }
         } catch (SQLException ex) {
-            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
