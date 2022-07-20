@@ -46,7 +46,7 @@ public class PromotionServices {
                     
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
+               Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         catch(Exception e){
@@ -121,7 +121,7 @@ try {
                 }
                 System.out.println("id_promotion est"+" "+P.getIdPromotion());
             } catch (SQLException ex) {
-                Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
+               Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         catch(Exception e){

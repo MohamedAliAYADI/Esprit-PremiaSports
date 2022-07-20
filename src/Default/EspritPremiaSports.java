@@ -5,7 +5,13 @@
  */
 package Default;
 
-import edu.esprit.services.EventService;
+import java.io.IOException;
+import java.util.logging.Level;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import edu.esprit.services.ParticipationService;
 import edu.esprit.services.Reservationservices;
 import edu.esprit.utils.MyConnection;
@@ -14,34 +20,33 @@ import edu.esprit.utils.MyConnection;
  *
  * @author Geekz
  */
-public class EspritPremiaSports {
+public class EspritPremiaSports extends Application {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("EspritPremiaSports !");
-  MyConnection mc= MyConnection.getInstance();
-        Reservationservices rse=new Reservationservices();
-        System.out.println(rse.displayReservation());
-        
-        
-        //********** event and participation ************
-            EventService es=new EventService();
-            ParticipationService ps=new ParticipationService();
-         // add event   
-        edu.esprit.entities.Event event1=new edu.esprit.entities.Event("volley", "volley ball tounement", "10/07/2022", "5/06/2022");
-         // add event first method
-        es.insertEvent1(event1);
-         // add event secand method
-        es.insertEvent2(event1);
-        // select all events
-        System.out.println(es.displayEvent());
-        // update event 
-        es.modifyEvent(1, "20/2000000000000");
-        //delete event
-        es.deleteEvent();
-    }
+    	@Override
+        public void start(Stage primaryStage) {
+           
+            
+            try {
+                
+            //Parent root = new FXMLLoader().load(getClass().getResource("..//GUI/UpdatePromotionReservationTranning.fxml"));
+            Parent root = new FXMLLoader().load(getClass().getResource("..//GUI/ListCoachNotes.fxml"));
+            //Parent root = new FXMLLoader().load(getClass().getResource("..//GUI/UpdatePromotionReservationTranning.fxml"));
+                Scene scene = new Scene(root, 1100, 570);
+                primaryStage.setScene(scene);
+                primaryStage.show();
+            } catch (IOException ex) {
+                //Logger.getLogger(EspritPremiaSports.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        /**
+         * @param args the command line arguments
+         */
+        public static void main(String[] args) {
+            launch(args);
+        }
     
 }

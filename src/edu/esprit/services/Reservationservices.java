@@ -66,7 +66,7 @@ try {
                        list.add(rse);
                    }
                } catch (SQLException ex) {
-                   Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
+                  Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
                }
                 return list;
     }
@@ -82,7 +82,7 @@ try {
                 ps.executeUpdate();            
                 System.out.println("Reservation supprimer avec succes");
             } catch (SQLException ex) {
-                Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
+               // Logger.getLogger(Reservationservices.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         catch(Exception e){

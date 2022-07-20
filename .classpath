@@ -1,8 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="extension-jar/mybatis-3.5.10.jar"/>
 	<classpathentry kind="lib" path="extension-jar/mysql-connector-java-8.0.29.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/AnimateFX-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/annotations-13.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/asm-7.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/cells-core-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/cglib-3.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/checker-qual-3.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/controlsfx-11.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/error_prone_annotations-2.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/failureaccess-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/guava-30.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/j2objc-annotations-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/jakarta.annotation-api-1.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-base-17.0.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-base-17.0.0.1-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-controls-17.0.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-controls-17.0.0.1-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-fxml-17.0.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-fxml-17.0.0.1-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-graphics-17.0.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-graphics-17.0.0.1-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-swing-17.0.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/javafx-swing-17.0.0.1-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/jnativehook-2.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/jsr305-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/jul-to-slf4j-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/kotlin-reflect-1.6.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/kotlin-stdlib-1.6.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/kotlin-stdlib-common-1.6.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/log4j-api-2.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/log4j-to-slf4j-2.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/logback-classic-1.2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/logback-core-1.2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/logger-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/mxparser-1.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/slf4j-api-1.7.36.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/snakeyaml-1.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-aop-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-beans-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-boot-2.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-boot-autoconfigure-2.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-boot-starter-2.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-boot-starter-logging-2.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-context-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-core-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-expression-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/spring-jcl-5.2.12.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/xmlpull-1.1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/moham/Desktop/fx/xstream-1.4.19.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

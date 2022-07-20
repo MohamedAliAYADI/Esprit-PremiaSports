@@ -17,7 +17,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 
@@ -59,7 +58,7 @@ public class ClientService implements UserServicesInterface{
                     + c.getNom()+ " added successfully" );
 
         } catch (SQLException ex) {
-            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -145,7 +144,7 @@ public class ClientService implements UserServicesInterface{
                 c.setPassword(rs.getString("prenom"));
                                    }
         } catch (SQLException ex) {
-            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
