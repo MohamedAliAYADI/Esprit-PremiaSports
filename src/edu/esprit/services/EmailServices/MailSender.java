@@ -5,6 +5,8 @@
  */
 package edu.esprit.services.EmailServices;
 
+import edu.esprit.entities.User;
+import edu.esprit.services.UserService;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -64,8 +66,18 @@ public class MailSender {
     return null;
     }
     
-        public static void SendSOSMail(String recep, String us) throws MessagingException{
-      
+        public static void SendRandCodeEmail(String recep, String us, User u) throws MessagingException{
+            String code;
+          
+            System.out.println("preparin rand code");      
+        RandomCodeGen rcg = new RandomCodeGen();
+        code =  rcg.genRandomCode();
+        UserService uss = new UserService();
+        u.setRandCode(code);
+        uss.updateUserCodeAuth(u);
+        System.out.println(" rand code is " + code);  
+        us = u.getEmail();
+        
         System.out.println("Preparing to send email");
     
         Properties properties = new Properties();
@@ -85,20 +97,23 @@ public class MailSender {
             }
             });
         
-     Message message = prepareSoSMessage(session , myAccountEmail, recep , us);
+     Message message = RandCodeGenEmail(session , myAccountEmail, recep , us,code );
         Transport.send(message);
         System.out.println("SOS Email sent successfully");
 }
 
-    private static Message prepareSoSMessage(Session session, String myAccountEmail, String Recep, String us) throws MessagingException {
-                    try {
+    private static Message RandCodeGenEmail(Session session, String myAccountEmail, String Recep, String us, String code) throws MessagingException {
+    
+        
+        
+        try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(Recep));
             message.setSubject("Premia Sports Password Reset");
             message.setText("Bonjour "+us+",\n" +
 "Vous avez demandé la réinitialisation de votre mot de passe, "
-                    + "voici donc votre nouveau mot de passe : "
+                    + "voici votre code de sécutité : "+code
                     + " et vous êtes le bienvenu");
             return message;
         } catch (AddressException ex) {

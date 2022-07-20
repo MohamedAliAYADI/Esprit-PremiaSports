@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ClientGuiHomePageController">
    <children>
-      <HBox layoutX="-2.0" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #00A0FE;">
+      <HBox layoutX="-2.0" prefHeight="50.0" prefWidth="702.0" style="-fx-background-color: #00A0FE;">
          <children>
             <Label prefHeight="50.0" prefWidth="750.0" style="-fx-font-size: 20; -fx-background-color: #00A0FE; -fx-text-fill: #ffffff; -fx-font-weight: bold;" text="  PremiaSports" />
             <ImageView fx:id="userImage" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">

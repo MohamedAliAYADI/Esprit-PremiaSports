@@ -144,15 +144,20 @@ public class LoginController implements Initializable {
         UserService us = new UserService();
         u.setPseudo(pseudoIn.getText());
         u.setPassword(DigestUtils.shaHex(passwordIn.getText()));
-        
+        //u.setPassword(passwordIn.getText());
        u1 = (User) us.listUserByPseudo(u);
-        System.out.println(""+u1);
+        System.out.println("ff"+u1);
+        if( u1.getStatus() == 0){
+          NotifLogin(u1.getPseudo(), "padlock", "Account Locked", "Bonjour");
+          System.out.println("Account Locked");
+      }
+        else {
       if (!u1.getPseudo().equals(pseudoIn.getText()) && !u1.getPassword().equals(passwordIn.getText())){
          
           System.out.println("Unknown User");
           UknownUserNotif();
       }
-       
+     
       else {  
           if(u1.getRole() == 1 ) {
               NotifLogin(u1.getPseudo(), "groom", "Vous etes connecté en tant que client", "Bonjour");
@@ -165,22 +170,69 @@ public class LoginController implements Initializable {
  stage.setScene(scene);
  stage.show();
           }
-              if(u1.getRole() == 2 ) {
+           else   if(u1.getRole() == 2 ) {
             NotifLogin(u1.getPseudo(), "manager", "Vous etes connecté en tant que moderateur", "Bonjour");
-          }
-                  if(u1.getRole() == 3 ) {
+                FXMLLoader loader =new FXMLLoader(getClass().getResource("ClientGuiHomePage.fxml"));
+               Parent root = (Parent) loader.load();
+                ClientGuiHomePageController ClientCont = loader.getController();
+                ClientCont.Myfunction(pseudoIn.getText());
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+ scene = new Scene(root);
+ stage.setScene(scene);
+ stage.show();
+              }
+              else    if(u1.getRole() == 3 ) {
             NotifLogin(u1.getPseudo(), "businessman", "Vous etes connecté en tant que prop de club", "Bonjour");
-          }
-                      if(u1.getRole() == 4 ) {
+               FXMLLoader loader =new FXMLLoader(getClass().getResource("ClientGuiHomePage.fxml"));
+               Parent root = (Parent) loader.load();
+                ClientGuiHomePageController ClientCont = loader.getController();
+                ClientCont.Myfunction(pseudoIn.getText());
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+ scene = new Scene(root);
+ stage.setScene(scene);
+ stage.show();
+                  }
+                else      if(u1.getRole() == 4 ) {
            NotifLogin(u1.getPseudo(), "businessman", "Vous etes connecté en tant que prop de complexe", "Bonjour");
-          }
-                          if(u1.getRole() == 5 ) {
+         
+                            FXMLLoader loader =new FXMLLoader(getClass().getResource("ClientGuiHomePage.fxml"));
+               Parent root = (Parent) loader.load();
+                ClientGuiHomePageController ClientCont = loader.getController();
+                ClientCont.Myfunction(pseudoIn.getText());
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+ scene = new Scene(root);
+ stage.setScene(scene);
+ stage.show();
+                      
+                      }
+                      else    if(u1.getRole() == 5 ) {
              NotifLogin(u1.getPseudo(), "man", "Vous etes connecté en tant que coach", "Bonjour");
-          }
+                                FXMLLoader loader =new FXMLLoader(getClass().getResource("ClientGuiHomePage.fxml"));
+               Parent root = (Parent) loader.load();
+                ClientGuiHomePageController ClientCont = loader.getController();
+                ClientCont.Myfunction(pseudoIn.getText());
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+ scene = new Scene(root);
+ stage.setScene(scene);
+ stage.show();
+                          }
+                          
+                         else {
+                NotifLogin(u1.getPseudo(), "man", "Vous etes connecté en tant que ADMIN", "Bonjour");
+             FXMLLoader loader =new FXMLLoader(getClass().getResource("UserManagement.fxml"));
+               Parent root = (Parent) loader.load();
+//                ClientGuiHomePageController ClientCont = loader.getController();
+//                ClientCont.Myfunction(pseudoIn.getText());
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+ scene = new Scene(root);
+ stage.setScene(scene);
+ stage.show();
+                          }
         
 
       
       } 
+        }
     }
     }
     

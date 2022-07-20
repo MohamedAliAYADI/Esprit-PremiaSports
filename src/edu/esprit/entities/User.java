@@ -15,7 +15,30 @@ public class User {
     private String password;
   private String email;
   private int role;
+ private String RandCode;
+ private int Status;
 
+    public User(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
+    }
+
+    
+    
+    public String getRandCode() {
+        return RandCode;
+    }
+
+    public void setRandCode(String RandCode) {
+        this.RandCode = RandCode;
+    }
     public User() {
     }
 
@@ -61,9 +84,10 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", pseudo=" + pseudo + ", password=" + password + ", email=" + email + ", role=" + role + '}';
+        return "User{" + "id=" + id + ", pseudo=" + pseudo + ", password=" + password + ", email=" + email + ", role=" + role + ", RandCode=" + RandCode + ", Status=" + Status + '}';
     }
 
+   
   
     
 }

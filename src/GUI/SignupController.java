@@ -888,13 +888,13 @@ if (mb.getMessageBoxResult() == MessageBoxResult.OK){
         if (!testTel()) {
             erreur = erreur + ("Telephone doit avoir 8 chiffres et ne doit pas contenir des caracteres \n");
         }
-//        if (!testDate()) {
-//            erreur = erreur + ("Veuillez verifier que vous avez choisi une date superieur a la date courante \n");
-//        }
-//        if (etatrecaptcha == 0) {
-//            erreur = erreur + ("Veuillez valider la recaptcha\n");
-//            recaptchaCheckMark.setImage(new Image("Images/erreurcheckMark.png"));
-//        }
+        if(!testPassword()){
+            erreur = erreur + ("Mot de pass doit avoir 2 majus au min ,un symbol, deux chiffres, et du longeur 8 au min ");
+        }
+        if(!testPass2()){
+          erreur = erreur + ("Mot de pass doit avoir 2 majus au min ,un symbol, deux chiffres, et du longeur 8 au min ");
+        }
+
         if (!testNom()) {
             erreur = erreur + ("Veuillez verifier votre Nom: seulement des caractères et de nombre >= 3 \n");
         }
@@ -905,7 +905,7 @@ if (mb.getMessageBoxResult() == MessageBoxResult.OK){
             erreur = erreur + ("Veuillez verifier votre Prenom: seulement des caractères et de nombre >= 3");
         }
 
-        if (!testMail() || !testMail2()|| !testTel() ||  !testNom() || !testPrenom() || !testPseudo()) {
+        if (!testMail() || !testMail2()|| !testTel() ||  !testNom() || !testPrenom() || !testPseudo() || !testPassword() || !testPass2()) {
             n = Notifications.create()
                     .title("Erreur de format")
                     .text(erreur)
@@ -915,7 +915,7 @@ if (mb.getMessageBoxResult() == MessageBoxResult.OK){
             n.showWarning();
         }
 
-        return testMail() && testTel() &&  testNom() && testPrenom();
+        return testMail() && testMail2() && testTel() &&  testNom() && testPrenom() && testPseudo() && testPass2() && testPassword();
     }
 
 
@@ -936,7 +936,12 @@ if (mb.getMessageBoxResult() == MessageBoxResult.OK){
     }
 
     @FXML
-    private void RetourAction(MouseEvent event) {
+    private void RetourAction(MouseEvent event) throws IOException {
+  root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+  scene = new Scene(   (Parent) root);
+  stage.setScene(scene);
+  stage.show();
     }
     
     

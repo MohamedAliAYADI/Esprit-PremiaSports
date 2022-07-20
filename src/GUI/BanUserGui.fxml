@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BanUserGuiController">
+   <children>
+      <HBox layoutX="-3.0" prefHeight="50.0" prefWidth="706.0" style="-fx-background-color: #00A0FE;">
+         <children>
+            <Label prefHeight="50.0" prefWidth="569.0" style="-fx-font-size: 20; -fx-background-color: #00A0FE; -fx-text-fill: #ffffff; -fx-font-weight: bold;" text="  PremiaSports" />
+            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/aaddmmiin.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="48.0" prefWidth="79.0" style="-fx-font-size: 20; -fx-text-fill: #ffffff;" text="ADMIN" />
+         </children>
+      </HBox>
+      <AnchorPane layoutX="-3.0" layoutY="47.0" onMouseClicked="#block" prefHeight="576.0" prefWidth="706.0" style="-fx-background-color: #d1e0e0;">
+         <children>
+            <TableView fx:id="userList" layoutX="38.0" layoutY="109.0" onMouseClicked="#rowClicked" prefHeight="335.0" prefWidth="629.0">
+              <columns>
+                <TableColumn fx:id="pseudo" prefWidth="250.66669464111328" text="Pseudo" />
+                <TableColumn fx:id="email" prefWidth="215.33331298828125" text="Email" />
+                  <TableColumn fx:id="role" minWidth="0.0" prefWidth="161.33330281575525" text="Role" />
+              </columns>
+            </TableView>
+            <Label layoutX="572.0" layoutY="64.0" text="Recherche" textFill="#4059a9">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="82.0" layoutX="530.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/icons8-search-64.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="filterField" layoutX="40.0" layoutY="69.0" opacity="0.75" prefHeight="25.0" prefWidth="473.0" promptText="Filter" />
+            <ImageView fitHeight="65.0" fitWidth="72.0" layoutX="635.0" layoutY="505.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/exit.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="59.0" fitWidth="65.0" layoutX="10.0" layoutY="513.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/reply.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="71.0" fitWidth="136.0" layoutX="318.0" layoutY="470.0" onMouseClicked="#block" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/img/block-friend.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
